@@ -1,0 +1,16 @@
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\bin\Debug\NomiCamp.exe.config
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\bin\Debug\NomiCamp.exe
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\bin\Debug\NomiCamp.pdb
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\obj\Debug\NomiCamp.csprojAssemblyReference.cache
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\obj\Debug\NomiCamp.Properties.Resources.resources
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\obj\Debug\NomiCamp.csproj.GenerateResource.cache
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\obj\Debug\NomiCamp.csproj.CoreCompileInputs.cache
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\obj\Debug\NomiCamp.exe
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\obj\Debug\NomiCamp.pdb
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\obj\Debug\NomiCamp.Canvas.resources
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\obj\Debug\NomiCamp.Views.formEmpleados.resources
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\obj\Debug\NomiCamp.formAdministraEmpleado.resources
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\obj\Debug\NomiCamp.Views.formRanchos.resources
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\obj\Debug\NomiCamp.formAdministrarRanchos.resources
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\obj\Debug\NomiCamp.Views.formNominas.resources
+D:\UNIVERSIDAD\ING SOFTWARE\SoftwareNomiCamp\NomiCamp\obj\Debug\NomiCamp.Views.formsFlotantes.formAdministrarNomina.resources
