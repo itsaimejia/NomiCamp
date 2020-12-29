@@ -26,18 +26,15 @@ namespace NomiCamp.Models
 		public int Insert()
 		{
 
+
 			try
 			{
 				using (MySqlConnection con = new MySqlConnection(constr))
 				{
-					using (MySqlCommand cmd = new MySqlCommand("insert_empleado", con))
+					string script = string.Format($"INSERT INTO informacion_empleados values(" +
+						$"'{NoEmpleado}','{Nombre}','{Puesto}',{SalarioXDia})");
+					using (MySqlCommand cmd = new MySqlCommand(script, con))
 					{
-						cmd.CommandType = CommandType.StoredProcedure;
-						cmd.Parameters.AddWithValue("@_no_control", NoEmpleado.ToUpper().Trim());
-						cmd.Parameters.AddWithValue("@_nombre", Nombre.ToUpper().Trim());
-						cmd.Parameters.AddWithValue("@_puesto", Puesto.ToUpper().Trim());
-						cmd.Parameters.AddWithValue("@_salario_diario", SalarioXDia);
-
 						con.Open();
 						return cmd.ExecuteNonQuery();
 					}

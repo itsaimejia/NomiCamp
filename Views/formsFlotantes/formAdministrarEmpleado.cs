@@ -13,6 +13,7 @@ namespace NomiCamp
 {
     public partial class formAdministraEmpleado : Form
     {
+		
         public formAdministraEmpleado()
         {
             InitializeComponent();

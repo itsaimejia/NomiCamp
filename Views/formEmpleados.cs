@@ -33,8 +33,10 @@ namespace NomiCamp.Views
 
 		private void btnAdminEmpleados_Click(object sender, EventArgs e)
 		{
-			formAdministraEmpleado fr = new formAdministraEmpleado();
+			var fr = new formAdministraEmpleado();
 			fr.Show();
+			
 		}
+
 	}
 }
