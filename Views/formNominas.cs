@@ -12,6 +12,7 @@ namespace NomiCamp.Views
 {
 	public partial class formNominas : Form
 	{
+
 		public formNominas(int ancho, int alto)
 		{
 			InitializeComponent();
@@ -25,7 +26,10 @@ namespace NomiCamp.Views
 			dvNominas.Size = new Size(this.Width - 40, this.Height - 100);
 			dvNominas.Location = new Point(20, 50);
 			btnReporteExcel.Location = new Point(this.Width - 140, this.Size.Height - 40);
-			
+			lblFecha.Text = DateTime.Today.ToString("dd/MM/yyyy");
+
+
+
 		}
 	}
 }

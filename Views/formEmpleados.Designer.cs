@@ -29,67 +29,49 @@
 		private void InitializeComponent()
 		{
 			this.dvInfoEmpleados = new System.Windows.Forms.DataGridView();
+			this.label1 = new System.Windows.Forms.Label();
+			this.btnReporteExcel = new System.Windows.Forms.Button();
+			this.btnAdminEmpleados = new System.Windows.Forms.PictureBox();
 			this.NoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Salario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.label1 = new System.Windows.Forms.Label();
-			this.btnReporteExcel = new System.Windows.Forms.Button();
-			this.btnAdminEmpleados = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.dvInfoEmpleados)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdminEmpleados)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dvInfoEmpleados
 			// 
+			this.dvInfoEmpleados.AllowUserToAddRows = false;
+			this.dvInfoEmpleados.AllowUserToDeleteRows = false;
+			this.dvInfoEmpleados.AllowUserToResizeColumns = false;
+			this.dvInfoEmpleados.AllowUserToResizeRows = false;
 			this.dvInfoEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dvInfoEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NoEmpleado,
             this.Nombre,
             this.Puesto,
             this.Salario});
+			this.dvInfoEmpleados.GridColor = System.Drawing.Color.White;
 			this.dvInfoEmpleados.Location = new System.Drawing.Point(12, 162);
 			this.dvInfoEmpleados.Name = "dvInfoEmpleados";
 			this.dvInfoEmpleados.Size = new System.Drawing.Size(1081, 476);
 			this.dvInfoEmpleados.TabIndex = 0;
 			// 
-			// NoEmpleado
-			// 
-			this.NoEmpleado.HeaderText = "No Empleado";
-			this.NoEmpleado.Name = "NoEmpleado";
-			this.NoEmpleado.ReadOnly = true;
-			// 
-			// Nombre
-			// 
-			this.Nombre.HeaderText = "Nombre";
-			this.Nombre.Name = "Nombre";
-			this.Nombre.ReadOnly = true;
-			// 
-			// Puesto
-			// 
-			this.Puesto.HeaderText = "Puesto";
-			this.Puesto.Name = "Puesto";
-			this.Puesto.ReadOnly = true;
-			// 
-			// Salario
-			// 
-			this.Salario.HeaderText = "Salario";
-			this.Salario.Name = "Salario";
-			this.Salario.ReadOnly = true;
-			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(946, 57);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(147, 16);
+			this.label1.Size = new System.Drawing.Size(171, 20);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "Administrar empleados";
 			// 
 			// btnReporteExcel
 			// 
 			this.btnReporteExcel.BackColor = System.Drawing.Color.Lime;
+			this.btnReporteExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnReporteExcel.ForeColor = System.Drawing.Color.Black;
 			this.btnReporteExcel.Location = new System.Drawing.Point(966, 644);
 			this.btnReporteExcel.Name = "btnReporteExcel";
@@ -108,6 +90,34 @@
 			this.btnAdminEmpleados.TabIndex = 1;
 			this.btnAdminEmpleados.TabStop = false;
 			this.btnAdminEmpleados.Click += new System.EventHandler(this.btnAdminEmpleados_Click);
+			// 
+			// NoEmpleado
+			// 
+			this.NoEmpleado.HeaderText = "No Empleado";
+			this.NoEmpleado.Name = "NoEmpleado";
+			this.NoEmpleado.ReadOnly = true;
+			this.NoEmpleado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// Nombre
+			// 
+			this.Nombre.HeaderText = "Nombre";
+			this.Nombre.Name = "Nombre";
+			this.Nombre.ReadOnly = true;
+			this.Nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// Puesto
+			// 
+			this.Puesto.HeaderText = "Puesto";
+			this.Puesto.Name = "Puesto";
+			this.Puesto.ReadOnly = true;
+			this.Puesto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// Salario
+			// 
+			this.Salario.HeaderText = "Salario";
+			this.Salario.Name = "Salario";
+			this.Salario.ReadOnly = true;
+			this.Salario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
 			// 
 			// formEmpleados
 			// 
@@ -133,12 +143,12 @@
 		#endregion
 
 		private System.Windows.Forms.DataGridView dvInfoEmpleados;
+		private System.Windows.Forms.PictureBox btnAdminEmpleados;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button btnReporteExcel;
 		private System.Windows.Forms.DataGridViewTextBoxColumn NoEmpleado;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Puesto;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Salario;
-		private System.Windows.Forms.PictureBox btnAdminEmpleados;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button btnReporteExcel;
 	}
 }

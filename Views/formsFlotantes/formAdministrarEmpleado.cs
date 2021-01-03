@@ -46,18 +46,7 @@ namespace NomiCamp
 
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
-			var emp = new Empleado
-			{
-				NoEmpleado = txtNoEmpleado.Text,
-				Nombre = txtNombre.Text,
-				Puesto = cbPuesto.Text,
-				SalarioXDia = float.Parse(txtSalario.Text)
-			};
-
-			if (emp.Insert() == 1)
-				MessageBox.Show("Insertado");
-			else
-				MessageBox.Show("No insertado");
+		
 
 		}
 	}

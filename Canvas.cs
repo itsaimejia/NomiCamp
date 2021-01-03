@@ -28,6 +28,7 @@ namespace NomiCamp
 			btnCerrar.Location = new Point(panel1.Size.Width-43, 2);
 			btnMinimizar.Location = new Point(panel1.Size.Width - 86, 2);
 			linkAdministrar.Location = new Point(12, panelMenu.Size.Height - 35);
+			lblTitulo.Location = new Point(panel1.Size.Width / 2 - 60, 10);
 
 			Form frm = panelPrincipal.Controls.OfType<Form>().Where(o => o.Name.Contains("formEmpleados")).FirstOrDefault();
 			if (frm == null)

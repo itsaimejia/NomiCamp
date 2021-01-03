@@ -28,7 +28,7 @@ namespace NomiCamp.Views
 			dvInfoEmpleados.Location = new Point(20, 150);
 			btnReporteExcel.Location = new Point(this.Width - 140, this.Size.Height - 40);
 			btnAdminEmpleados.Location = new Point(this.Width - 170, 50);
-			label1.Location = new Point(this.Width - 220, 95);
+			label1.Location = new Point(this.Width - 240, 95);
 		}
 
 		private void btnAdminEmpleados_Click(object sender, EventArgs e)
