@@ -1,0 +1,10 @@
+D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\nomicamp_seleccion\bin\Debug\nomicamp_seleccion.exe.config
+D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\nomicamp_seleccion\bin\Debug\nomicamp_seleccion.exe
+D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\nomicamp_seleccion\bin\Debug\nomicamp_seleccion.pdb
+D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\nomicamp_seleccion\obj\Debug\nomicamp_seleccion.csprojAssemblyReference.cache
+D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\nomicamp_seleccion\obj\Debug\nomicamp_seleccion.Properties.Resources.resources
+D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\nomicamp_seleccion\obj\Debug\nomicamp_seleccion.csproj.GenerateResource.cache
+D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\nomicamp_seleccion\obj\Debug\nomicamp_seleccion.csproj.CoreCompileInputs.cache
+D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\nomicamp_seleccion\obj\Debug\nomicamp_seleccion.exe
+D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\nomicamp_seleccion\obj\Debug\nomicamp_seleccion.pdb
+D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\nomicamp_seleccion\obj\Debug\nomicamp_seleccion.Form1.resources
