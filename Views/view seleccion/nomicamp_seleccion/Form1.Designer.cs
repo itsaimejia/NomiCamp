@@ -75,7 +75,7 @@
 			// 
 			// btnCerrar
 			// 
-
+			this.btnCerrar.Image = global::NomiCamp.Properties.Resources.error_1_;
 			this.btnCerrar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnCerrar.InitialImage")));
 			this.btnCerrar.Location = new System.Drawing.Point(1223, 3);
 			this.btnCerrar.Name = "btnCerrar";
@@ -87,7 +87,7 @@
 			// 
 			// btnMinimizar
 			// 
-
+			this.btnMinimizar.Image = global::NomiCamp.Properties.Resources.window_minimize_icon_144028;
 			this.btnMinimizar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.InitialImage")));
 			this.btnMinimizar.Location = new System.Drawing.Point(1190, 12);
 			this.btnMinimizar.Name = "btnMinimizar";

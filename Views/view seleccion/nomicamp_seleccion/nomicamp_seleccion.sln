@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NomiCamp", "NomiCamp.csproj", "{9DB2DFC7-66FB-44F0-9C4F-A7D76AF5A3B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nomicamp_seleccion", "nomicamp_seleccion.csproj", "{17A577BD-D10D-471F-80F9-8346397075EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9DB2DFC7-66FB-44F0-9C4F-A7D76AF5A3B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9DB2DFC7-66FB-44F0-9C4F-A7D76AF5A3B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9DB2DFC7-66FB-44F0-9C4F-A7D76AF5A3B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9DB2DFC7-66FB-44F0-9C4F-A7D76AF5A3B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17A577BD-D10D-471F-80F9-8346397075EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17A577BD-D10D-471F-80F9-8346397075EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17A577BD-D10D-471F-80F9-8346397075EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17A577BD-D10D-471F-80F9-8346397075EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4C58E441-8F87-4619-8971-DA0EBE9623AA}
+		SolutionGuid = {33E4027D-C8D3-4892-9826-BE969617A485}
 	EndGlobalSection
 EndGlobal
