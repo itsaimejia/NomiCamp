@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.lblTitulo = new System.Windows.Forms.Label();
 			this.btnCerrar = new System.Windows.Forms.PictureBox();
@@ -75,8 +74,7 @@
 			// 
 			// btnCerrar
 			// 
-			this.btnCerrar.Image = global::NomiCamp.Properties.Resources.error_1_;
-			this.btnCerrar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnCerrar.InitialImage")));
+			this.btnCerrar.Image = global::nomicamp_seleccion.Properties.Resources.error_1_;
 			this.btnCerrar.Location = new System.Drawing.Point(1223, 3);
 			this.btnCerrar.Name = "btnCerrar";
 			this.btnCerrar.Size = new System.Drawing.Size(23, 31);
@@ -87,8 +85,7 @@
 			// 
 			// btnMinimizar
 			// 
-			this.btnMinimizar.Image = global::NomiCamp.Properties.Resources.window_minimize_icon_144028;
-			this.btnMinimizar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.InitialImage")));
+			this.btnMinimizar.Image = global::nomicamp_seleccion.Properties.Resources.window_minimize_icon_144028;
 			this.btnMinimizar.Location = new System.Drawing.Point(1190, 12);
 			this.btnMinimizar.Name = "btnMinimizar";
 			this.btnMinimizar.Size = new System.Drawing.Size(27, 20);
@@ -174,7 +171,7 @@
 			// 
 			// btnBuscar
 			// 
-			this.btnBuscar.Image = global::NomiCamp.Properties.Resources.buscar;
+			this.btnBuscar.Image = global::nomicamp_seleccion.Properties.Resources.buscar;
 			this.btnBuscar.Location = new System.Drawing.Point(240, 79);
 			this.btnBuscar.Name = "btnBuscar";
 			this.btnBuscar.Size = new System.Drawing.Size(22, 26);
