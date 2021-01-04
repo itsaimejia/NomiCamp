@@ -17,33 +17,9 @@ namespace NomiCamp.Models
 		public float SalarioXDia { get; set; }
 
 
-		string constr = Connection.ConnectionString;
 		public Empleado()
 		{
 
-		}
-
-		public int Insert()
-		{
-
-
-			try
-			{
-				using (MySqlConnection con = new MySqlConnection(constr))
-				{
-					string script = string.Format($"INSERT INTO informacion_empleados values(" +
-						$"'{NoEmpleado}','{Nombre}','{Puesto}',{SalarioXDia})");
-					using (MySqlCommand cmd = new MySqlCommand(script, con))
-					{
-						con.Open();
-						return cmd.ExecuteNonQuery();
-					}
-				}
-			} catch(Exception e)
-			{
-				Console.WriteLine(e.Message);
-				return 0;
-			}
 		}
 
 

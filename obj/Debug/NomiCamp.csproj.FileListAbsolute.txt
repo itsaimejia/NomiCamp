@@ -46,3 +46,4 @@ D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\NomiCamp\bin\Debug\System.Runtime.CompilerS
 D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\NomiCamp\bin\Debug\MySql.Data.xml
 D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\NomiCamp\obj\Debug\NomiCamp.exe.config
 D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\NomiCamp\obj\Debug\NomiCamp.csproj.CopyComplete
+D:\UNIVERSIDAD\ING SOFTWARE\nomicamp\NomiCamp\obj\Debug\nomicamp_seleccion.Form1.resources

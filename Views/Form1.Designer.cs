@@ -31,6 +31,8 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.lblTitulo = new System.Windows.Forms.Label();
+			this.btnCerrar = new System.Windows.Forms.PictureBox();
+			this.btnMinimizar = new System.Windows.Forms.PictureBox();
 			this.btnCargarLista = new System.Windows.Forms.Button();
 			this.dvSelEmpleados = new System.Windows.Forms.DataGridView();
 			this.NoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,13 +42,11 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtNoEmpleado = new System.Windows.Forms.TextBox();
 			this.btnBuscar = new System.Windows.Forms.PictureBox();
-			this.btnCerrar = new System.Windows.Forms.PictureBox();
-			this.btnMinimizar = new System.Windows.Forms.PictureBox();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dvSelEmpleados)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dvSelEmpleados)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -72,6 +72,30 @@
 			this.lblTitulo.Size = new System.Drawing.Size(106, 25);
 			this.lblTitulo.TabIndex = 2;
 			this.lblTitulo.Text = "Selección";
+			// 
+			// btnCerrar
+			// 
+
+			this.btnCerrar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnCerrar.InitialImage")));
+			this.btnCerrar.Location = new System.Drawing.Point(1223, 3);
+			this.btnCerrar.Name = "btnCerrar";
+			this.btnCerrar.Size = new System.Drawing.Size(23, 31);
+			this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.btnCerrar.TabIndex = 0;
+			this.btnCerrar.TabStop = false;
+			this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+			// 
+			// btnMinimizar
+			// 
+
+			this.btnMinimizar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.InitialImage")));
+			this.btnMinimizar.Location = new System.Drawing.Point(1190, 12);
+			this.btnMinimizar.Name = "btnMinimizar";
+			this.btnMinimizar.Size = new System.Drawing.Size(27, 20);
+			this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.btnMinimizar.TabIndex = 1;
+			this.btnMinimizar.TabStop = false;
+			this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
 			// 
 			// btnCargarLista
 			// 
@@ -150,37 +174,13 @@
 			// 
 			// btnBuscar
 			// 
-			this.btnBuscar.Image = global::nomicamp_seleccion.Properties.Resources.buscar1;
+			this.btnBuscar.Image = global::NomiCamp.Properties.Resources.buscar;
 			this.btnBuscar.Location = new System.Drawing.Point(240, 79);
 			this.btnBuscar.Name = "btnBuscar";
 			this.btnBuscar.Size = new System.Drawing.Size(22, 26);
 			this.btnBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.btnBuscar.TabIndex = 11;
 			this.btnBuscar.TabStop = false;
-			// 
-			// btnCerrar
-			// 
-			this.btnCerrar.Image = global::nomicamp_seleccion.Properties.Resources.error_1_;
-			this.btnCerrar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnCerrar.InitialImage")));
-			this.btnCerrar.Location = new System.Drawing.Point(1223, 3);
-			this.btnCerrar.Name = "btnCerrar";
-			this.btnCerrar.Size = new System.Drawing.Size(23, 31);
-			this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.btnCerrar.TabIndex = 0;
-			this.btnCerrar.TabStop = false;
-			this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-			// 
-			// btnMinimizar
-			// 
-			this.btnMinimizar.Image = global::nomicamp_seleccion.Properties.Resources.window_minimize_icon_144028;
-			this.btnMinimizar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.InitialImage")));
-			this.btnMinimizar.Location = new System.Drawing.Point(1190, 12);
-			this.btnMinimizar.Name = "btnMinimizar";
-			this.btnMinimizar.Size = new System.Drawing.Size(27, 20);
-			this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.btnMinimizar.TabIndex = 1;
-			this.btnMinimizar.TabStop = false;
-			this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
 			// 
 			// Form1
 			// 
@@ -203,10 +203,10 @@
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dvSelEmpleados)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dvSelEmpleados)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
