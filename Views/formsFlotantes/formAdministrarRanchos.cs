@@ -56,6 +56,11 @@ namespace NomiCamp
 				if (nuevo.Insert())
 				{
 					MessageBox.Show("Insertado");
+					txtCodigoRancho.Text = string.Empty;
+					txtHectareas.Text = string.Empty;
+					txtTablaVarietal.Text = string.Empty;
+					txtTipoVarietal.Text = string.Empty;
+					cbSupervisor.Text = string.Empty;
 				}
 				else
 				{
