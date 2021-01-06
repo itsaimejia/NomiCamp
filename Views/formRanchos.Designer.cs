@@ -37,6 +37,7 @@
 			this.btnReporteExcel = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnAdminRanchos = new System.Windows.Forms.PictureBox();
+			this.btnActualizar = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dvInfoRanchos)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdminRanchos)).BeginInit();
 			this.SuspendLayout();
@@ -87,6 +88,7 @@
 			// btnReporteExcel
 			// 
 			this.btnReporteExcel.BackColor = System.Drawing.Color.Lime;
+			this.btnReporteExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnReporteExcel.ForeColor = System.Drawing.Color.Black;
 			this.btnReporteExcel.Location = new System.Drawing.Point(863, 498);
 			this.btnReporteExcel.Name = "btnReporteExcel";
@@ -98,10 +100,10 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(736, 105);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(126, 16);
+			this.label1.Size = new System.Drawing.Size(150, 20);
 			this.label1.TabIndex = 6;
 			this.label1.Text = "Administrar ranchos";
 			// 
@@ -116,12 +118,24 @@
 			this.btnAdminRanchos.TabStop = false;
 			this.btnAdminRanchos.Click += new System.EventHandler(this.btnAdminRanchos_Click);
 			// 
+			// btnActualizar
+			// 
+			this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+			this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnActualizar.Location = new System.Drawing.Point(12, 517);
+			this.btnActualizar.Name = "btnActualizar";
+			this.btnActualizar.Size = new System.Drawing.Size(74, 26);
+			this.btnActualizar.TabIndex = 7;
+			this.btnActualizar.Text = "Actualizar";
+			this.btnActualizar.UseVisualStyleBackColor = false;
+			// 
 			// formRanchos
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1042, 555);
 			this.ControlBox = false;
+			this.Controls.Add(this.btnActualizar);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnAdminRanchos);
 			this.Controls.Add(this.btnReporteExcel);
@@ -148,5 +162,6 @@
 		private System.Windows.Forms.Button btnReporteExcel;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.PictureBox btnAdminRanchos;
+		private System.Windows.Forms.Button btnActualizar;
 	}
 }
