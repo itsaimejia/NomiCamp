@@ -168,6 +168,7 @@ namespace NomiCamp
 			// btnRemover
 			// 
 			this.btnRemover.BackColor = System.Drawing.Color.Red;
+			this.btnRemover.Enabled = false;
 			this.btnRemover.FlatAppearance.BorderColor = System.Drawing.Color.Red;
 			this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnRemover.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -181,6 +182,7 @@ namespace NomiCamp
 			// btnGuardar
 			// 
 			this.btnGuardar.BackColor = System.Drawing.Color.Lime;
+			this.btnGuardar.Enabled = false;
 			this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
 			this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnGuardar.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

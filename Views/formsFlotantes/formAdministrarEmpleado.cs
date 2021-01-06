@@ -50,6 +50,8 @@ namespace NomiCamp
 			txtNombre.Enabled = true;
 			txtSalario.Enabled = true;
 			cbPuesto.Enabled = true;
+			btnGuardar.Enabled = true;
+			btnRemover.Enabled = true;
 		}
 		private void txtNoEmpleado_KeyPress(object sender, KeyPressEventArgs e)
 		{
@@ -80,11 +82,8 @@ namespace NomiCamp
 				if (existente.Update())
 				{
 					MessageBox.Show("Actualizado");
-					txtNoEmpleado.Text = string.Empty;
-					txtNombre.Text = string.Empty;
-					cbPuesto.Text = string.Empty;
-					txtSalario.Text = string.Empty;
-
+					Limpiar();
+					editar = false;
 				}
 				else
 				{
@@ -163,6 +162,7 @@ namespace NomiCamp
 		private void btnLimpiar_Click(object sender, EventArgs e)
 		{
 			Limpiar();
+			editar = false;
 		}
 
 		private void Limpiar()

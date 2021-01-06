@@ -56,11 +56,7 @@ namespace NomiCamp
 				if (nuevo.Insert())
 				{
 					MessageBox.Show("Insertado");
-					txtCodigoRancho.Text = string.Empty;
-					txtHectareas.Text = string.Empty;
-					txtTablaVarietal.Text = string.Empty;
-					txtTipoVarietal.Text = string.Empty;
-					cbSupervisor.Text = string.Empty;
+					Limpiar();
 				}
 				else
 				{
@@ -84,12 +80,21 @@ namespace NomiCamp
 
 		private void btnLimpiar_Click(object sender, EventArgs e)
 		{
-
+			Limpiar();
 		}
 
 		private void btnBuscar_Click(object sender, EventArgs e)
 		{
 
+		}
+
+		private void Limpiar()
+		{
+			txtCodigoRancho.Text = string.Empty;
+			txtHectareas.Text = string.Empty;
+			txtTablaVarietal.Text = string.Empty;
+			txtTipoVarietal.Text = string.Empty;
+			cbSupervisor.SelectedIndex = -1;
 		}
 	}
 }
