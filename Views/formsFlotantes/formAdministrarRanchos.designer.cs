@@ -231,6 +231,7 @@
 			this.Name = "formAdministrarRanchos";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "formAdministrarRanchos";
+			this.Load += new System.EventHandler(this.formAdministrarRanchos_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();

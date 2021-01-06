@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NomiCamp.Models;
+using System;
 using System.Windows.Forms;
 
 namespace NomiCamp
@@ -18,6 +19,14 @@ namespace NomiCamp
 		private void btnRegresar_Click(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private void formAdministrarRanchos_Load(object sender, EventArgs e)
+		{
+			foreach (var s in Supervisor.GetSupervisores())
+			{
+				cbSupervisor.Items.Add(s.IdSupervisor);
+			}
 		}
 	}
 }

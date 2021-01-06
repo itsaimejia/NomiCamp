@@ -72,6 +72,7 @@ namespace NomiCamp
             }
 			else
 			{
+
 				var nuevo = new Empleado()
 				{
 					NoEmpleado = txtNoEmpleado.Text.Trim(),

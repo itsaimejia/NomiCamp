@@ -55,6 +55,8 @@
     </Compile>
     <Compile Include="Models\Conexion.cs" />
     <Compile Include="Models\Empleado.cs" />
+    <Compile Include="Models\Rancho.cs" />
+    <Compile Include="Models\Supervisor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\formEmpleados.cs">
