@@ -47,6 +47,7 @@ namespace NomiCamp
 
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
+
 			if (string.IsNullOrEmpty(txtNoEmpleado.Text))
 			{
 				MessageBox.Show("Ingresa el numero de empleado");
@@ -81,7 +82,20 @@ namespace NomiCamp
 					SalarioXDia = float.Parse(txtSalario.Text.Trim())
 
 				};
-				nuevo.Insert();
+
+                if (nuevo.Insert())
+                {
+					MessageBox.Show("Insertado");
+					txtNoEmpleado.Text = string.Empty;
+					txtNombre.Text = string.Empty;
+					cbPuesto.Text = string.Empty;
+					txtSalario.Text = string.Empty;
+					
+                }
+                else
+                {
+					MessageBox.Show("Ocurrio un error");
+                }
 			}
 			
 
