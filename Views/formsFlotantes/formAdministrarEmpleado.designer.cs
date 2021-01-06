@@ -44,6 +44,7 @@ namespace NomiCamp
 			this.btnGuardar = new System.Windows.Forms.Button();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
+			this.btnLimpiar = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
@@ -91,6 +92,7 @@ namespace NomiCamp
 			// 
 			// txtNombre
 			// 
+			this.txtNombre.Enabled = false;
 			this.txtNombre.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtNombre.Location = new System.Drawing.Point(122, 142);
 			this.txtNombre.Name = "txtNombre";
@@ -99,6 +101,7 @@ namespace NomiCamp
 			// 
 			// txtSalario
 			// 
+			this.txtSalario.Enabled = false;
 			this.txtSalario.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSalario.Location = new System.Drawing.Point(144, 289);
 			this.txtSalario.Name = "txtSalario";
@@ -109,6 +112,7 @@ namespace NomiCamp
 			// cbPuesto
 			// 
 			this.cbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbPuesto.Enabled = false;
 			this.cbPuesto.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cbPuesto.FormattingEnabled = true;
 			this.cbPuesto.Items.AddRange(new object[] {
@@ -207,12 +211,27 @@ namespace NomiCamp
 			this.label6.TabIndex = 31;
 			this.label6.Text = "Puesto";
 			// 
+			// btnLimpiar
+			// 
+			this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnLimpiar.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLimpiar.Location = new System.Drawing.Point(353, 395);
+			this.btnLimpiar.Name = "btnLimpiar";
+			this.btnLimpiar.Size = new System.Drawing.Size(85, 34);
+			this.btnLimpiar.TabIndex = 32;
+			this.btnLimpiar.Text = "Limpiar";
+			this.btnLimpiar.UseVisualStyleBackColor = false;
+			this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+			// 
 			// formAdministraEmpleado
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(450, 450);
 			this.ControlBox = false;
+			this.Controls.Add(this.btnLimpiar);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.btnRemover);
 			this.Controls.Add(this.btnGuardar);
@@ -257,6 +276,7 @@ namespace NomiCamp
 		private System.Windows.Forms.Button btnGuardar;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Button btnLimpiar;
 	}
 }
 

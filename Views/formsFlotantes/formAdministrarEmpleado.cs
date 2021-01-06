@@ -13,7 +13,7 @@ namespace NomiCamp
 {
     public partial class formAdministraEmpleado : Form
     {
-		
+		private bool editar = false;
         public formAdministraEmpleado()
         {
             InitializeComponent();
@@ -25,56 +25,50 @@ namespace NomiCamp
             this.Close();
         }
 
-		
-
-        public void consultar()
+		public void Consultar()
 		{
-           
+			var empleado = Empleado.Select(txtNoEmpleado.Text);
+			if (empleado != null)
+			{
+				ControlesEditables();
+
+				txtNombre.Text = empleado.Nombre;
+				cbPuesto.Text = empleado.Puesto;
+				txtSalario.Text = empleado.SalarioXDia.ToString();
+
+				editar = true;
+			}
+			else
+			{
+				MessageBox.Show("El empleado no existe");
+				ControlesEditables();
+			}
 		}
 
+		private void ControlesEditables()
+		{
+			txtNombre.Enabled = true;
+			txtSalario.Enabled = true;
+			cbPuesto.Enabled = true;
+		}
 		private void txtNoEmpleado_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if (e.KeyChar == (char)Keys.Enter)
 			{
-               
+				Consultar();
 			}
 		}
 
 		private void btnBuscar_Click(object sender, EventArgs e)
 		{
-			
+			Consultar();
 		}
 
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
-
-			if (string.IsNullOrEmpty(txtNoEmpleado.Text))
+			if (editar)
 			{
-				MessageBox.Show("Ingresa el numero de empleado");
-				txtNoEmpleado.Focus();
-			}
-			else
-			if (string.IsNullOrEmpty(txtNombre.Text))
-			{
-				MessageBox.Show("Ingresa el nombre");
-				txtNombre.Focus();
-			}
-			else
-			if (cbPuesto.SelectedIndex.Equals(-1))
-            {
-				MessageBox.Show("Selecciona un puesto");
-				cbPuesto.Focus();
-            }
-			else
-            if (string.IsNullOrEmpty(txtSalario.Text))
-            {
-				MessageBox.Show("Ingresa el salario");
-				txtSalario.Focus();
-            }
-			else
-			{
-
-				var nuevo = new Empleado()
+				var existente = new Empleado()
 				{
 					NoEmpleado = txtNoEmpleado.Text.Trim(),
 					Nombre = txtNombre.Text.Trim(),
@@ -83,20 +77,68 @@ namespace NomiCamp
 
 				};
 
-                if (nuevo.Insert())
-                {
-					MessageBox.Show("Insertado");
+				if (existente.Update())
+				{
+					MessageBox.Show("Actualizado");
 					txtNoEmpleado.Text = string.Empty;
 					txtNombre.Text = string.Empty;
 					cbPuesto.Text = string.Empty;
 					txtSalario.Text = string.Empty;
-					
-                }
-                else
-                {
+
+				}
+				else
+				{
 					MessageBox.Show("Ocurrio un error");
-                }
+				}
 			}
+			else
+			{
+				if (string.IsNullOrEmpty(txtNoEmpleado.Text))
+				{
+					MessageBox.Show("Ingresa el numero de empleado");
+					txtNoEmpleado.Focus();
+				}
+				if (string.IsNullOrEmpty(txtNombre.Text))
+				{
+					MessageBox.Show("Ingresa el nombre");
+					txtNombre.Focus();
+				}
+
+				if (cbPuesto.SelectedIndex.Equals(-1))
+				{
+					MessageBox.Show("Selecciona un puesto");
+					cbPuesto.Focus();
+				}
+				if (string.IsNullOrEmpty(txtSalario.Text))
+				{
+					MessageBox.Show("Ingresa el salario");
+					txtSalario.Focus();
+				}
+				else
+				{
+
+					var nuevo = new Empleado()
+					{
+						NoEmpleado = txtNoEmpleado.Text.Trim(),
+						Nombre = txtNombre.Text.Trim(),
+						Puesto = cbPuesto.Text,
+						SalarioXDia = float.Parse(txtSalario.Text.Trim())
+
+					};
+
+					if (nuevo.Insert())
+					{
+						MessageBox.Show("Insertado");
+						Limpiar();
+
+					}
+					else
+					{
+						MessageBox.Show("Ocurrio un error");
+					}
+				}
+			}
+			
 			
 
 			
@@ -116,6 +158,19 @@ namespace NomiCamp
 			{
 				
 			}
+		}
+
+		private void btnLimpiar_Click(object sender, EventArgs e)
+		{
+			Limpiar();
+		}
+
+		private void Limpiar()
+		{
+			txtNoEmpleado.Text = string.Empty;
+			txtNombre.Text = string.Empty;
+			cbPuesto.SelectedIndex = -1;
+			txtSalario.Text = string.Empty;
 		}
 	}
 }

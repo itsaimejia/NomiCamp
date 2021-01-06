@@ -37,22 +37,28 @@ namespace NomiCamp.Models
 			}
 		}
 
-		public Empleado Select(string noEmpleado)
+		public static Empleado Select(string noEmpleado)
 		{
 			string query = $"select * from empleados where no_empleado= '{noEmpleado}'";
-			var cmd = new MySqlCommand(query, Conexion.get());
-			var reader = cmd.ExecuteReader();
-
-			var res = new Empleado();
-			while (reader.Read())
+			try
 			{
-				res.NoEmpleado = Convert.ToString(reader["no_empleado"]);
-				res.Nombre = Convert.ToString(reader["nombre"]);
-				res.Puesto = Convert.ToString(reader["puesto"]);
-				res.SalarioXDia = float.Parse(Convert.ToString(reader["salario_diario"]));
+				var cmd = new MySqlCommand(query, Conexion.get());
+				var reader = cmd.ExecuteReader();
+
+				var res = new Empleado();
+				while (reader.Read())
+				{
+					res.NoEmpleado = Convert.ToString(reader["no_empleado"]);
+					res.Nombre = Convert.ToString(reader["nombre"]);
+					res.Puesto = Convert.ToString(reader["puesto"]);
+					res.SalarioXDia = float.Parse(Convert.ToString(reader["salario_diario"]));
+				}
+				reader.Close();
+				return res;
+			}catch(Exception e)
+			{
+				return null;
 			}
-			reader.Close();
-			return res;
 		}
 
 

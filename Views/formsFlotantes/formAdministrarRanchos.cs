@@ -77,5 +77,14 @@ namespace NomiCamp
 			}
 		}
 
+		private void btnLimpiar_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnBuscar_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

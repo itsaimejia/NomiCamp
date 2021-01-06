@@ -31,6 +31,8 @@ namespace NomiCamp.Models
 			}
 		}
 
+
+
 		public static List<Rancho> GetRanchos()
 		{
 

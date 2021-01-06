@@ -45,6 +45,7 @@
 			this.btnGuardar = new System.Windows.Forms.Button();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
+			this.btnLimpiar = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
@@ -82,19 +83,21 @@
 			// 
 			// txtTablaVarietal
 			// 
+			this.txtTablaVarietal.Enabled = false;
 			this.txtTablaVarietal.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtTablaVarietal.Location = new System.Drawing.Point(234, 206);
 			this.txtTablaVarietal.Name = "txtTablaVarietal";
 			this.txtTablaVarietal.Size = new System.Drawing.Size(114, 31);
-			this.txtTablaVarietal.TabIndex = 16;
+			this.txtTablaVarietal.TabIndex = 4;
 			// 
 			// txtHectareas
 			// 
+			this.txtHectareas.Enabled = false;
 			this.txtHectareas.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtHectareas.Location = new System.Drawing.Point(144, 143);
 			this.txtHectareas.Name = "txtHectareas";
 			this.txtHectareas.Size = new System.Drawing.Size(148, 31);
-			this.txtHectareas.TabIndex = 14;
+			this.txtHectareas.TabIndex = 2;
 			// 
 			// txtCodigoRancho
 			// 
@@ -102,7 +105,7 @@
 			this.txtCodigoRancho.Location = new System.Drawing.Point(145, 78);
 			this.txtCodigoRancho.Name = "txtCodigoRancho";
 			this.txtCodigoRancho.Size = new System.Drawing.Size(148, 31);
-			this.txtCodigoRancho.TabIndex = 13;
+			this.txtCodigoRancho.TabIndex = 1;
 			// 
 			// panel1
 			// 
@@ -144,16 +147,18 @@
 			this.btnBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.btnBuscar.TabIndex = 20;
 			this.btnBuscar.TabStop = false;
+			this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
 			// 
 			// cbSupervisor
 			// 
 			this.cbSupervisor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbSupervisor.Enabled = false;
 			this.cbSupervisor.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cbSupervisor.FormattingEnabled = true;
 			this.cbSupervisor.Location = new System.Drawing.Point(125, 280);
 			this.cbSupervisor.Name = "cbSupervisor";
 			this.cbSupervisor.Size = new System.Drawing.Size(207, 31);
-			this.cbSupervisor.TabIndex = 15;
+			this.cbSupervisor.TabIndex = 5;
 			// 
 			// label6
 			// 
@@ -167,11 +172,12 @@
 			// 
 			// txtTipoVarietal
 			// 
+			this.txtTipoVarietal.Enabled = false;
 			this.txtTipoVarietal.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtTipoVarietal.Location = new System.Drawing.Point(103, 206);
 			this.txtTipoVarietal.Name = "txtTipoVarietal";
 			this.txtTipoVarietal.Size = new System.Drawing.Size(109, 31);
-			this.txtTipoVarietal.TabIndex = 24;
+			this.txtTipoVarietal.TabIndex = 3;
 			// 
 			// button1
 			// 
@@ -195,7 +201,7 @@
 			this.btnGuardar.Location = new System.Drawing.Point(154, 394);
 			this.btnGuardar.Name = "btnGuardar";
 			this.btnGuardar.Size = new System.Drawing.Size(118, 34);
-			this.btnGuardar.TabIndex = 29;
+			this.btnGuardar.TabIndex = 6;
 			this.btnGuardar.Text = "Guardar Cambios";
 			this.btnGuardar.UseVisualStyleBackColor = false;
 			this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -219,12 +225,27 @@
 			this.label7.TabIndex = 31;
 			this.label7.Text = "Seleccionar supervisor";
 			// 
+			// btnLimpiar
+			// 
+			this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnLimpiar.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLimpiar.Location = new System.Drawing.Point(353, 394);
+			this.btnLimpiar.Name = "btnLimpiar";
+			this.btnLimpiar.Size = new System.Drawing.Size(85, 34);
+			this.btnLimpiar.TabIndex = 33;
+			this.btnLimpiar.Text = "Limpiar";
+			this.btnLimpiar.UseVisualStyleBackColor = false;
+			this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+			// 
 			// formAdministrarRanchos
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(450, 450);
 			this.ControlBox = false;
+			this.Controls.Add(this.btnLimpiar);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.btnGuardar);
@@ -272,5 +293,6 @@
 		private System.Windows.Forms.Button btnGuardar;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Button btnLimpiar;
 	}
 }
