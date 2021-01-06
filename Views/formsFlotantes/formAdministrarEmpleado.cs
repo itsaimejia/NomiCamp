@@ -62,5 +62,20 @@ namespace NomiCamp
 				MessageBox.Show("No insertado");
 
 		}
+
+		private void txtSalario_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!(char.IsDigit(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != 46) && (e.KeyChar != (char)Keys.Enter))
+			{
+				txtSalario.Text = string.Empty;
+				e.Handled = true;
+				return;
+			}
+			else
+			if (e.KeyChar == (char)Keys.Enter)
+			{
+				
+			}
+		}
 	}
 }
