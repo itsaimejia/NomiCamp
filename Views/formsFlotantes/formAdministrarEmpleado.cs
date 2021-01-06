@@ -1,4 +1,5 @@
 ﻿using NomiCamp.Models;
+using NomiCamp.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,8 @@ namespace NomiCamp
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            this.Close();
+			this.Close();
+			
         }
 
 		
@@ -47,19 +49,25 @@ namespace NomiCamp
 
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
-			var nuevo = new Empleado()
+			if (txtNoEmpleado.Text == string.Empty)
 			{
-				NoEmpleado = txtNoEmpleado.Text.Trim(),
-				Nombre = txtNombre.Text.Trim(),
-				Puesto = cbPuesto.Text,
-				SalarioXDia = float.Parse(txtSalario.Text.Trim())
-
-			};
-
-			if (nuevo.Insert())
-				MessageBox.Show("insertado");
+				MessageBox.Show("Escribe el numero de empleado");
+				txtNoEmpleado.Focus();
+			}
 			else
-				MessageBox.Show("No insertado");
+			{
+				var nuevo = new Empleado()
+				{
+					NoEmpleado = txtNoEmpleado.Text.Trim(),
+					Nombre = txtNombre.Text.Trim(),
+					Puesto = cbPuesto.Text,
+					SalarioXDia = float.Parse(txtSalario.Text.Trim())
+
+				};
+			}
+			
+
+			
 
 		}
 
