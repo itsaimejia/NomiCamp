@@ -18,7 +18,7 @@ namespace NomiCamp.Models
 		public bool Insert()
 		{
 
-			string query = $"insert into empleados values ('{Codigo}',{Hectareas},{TipoVarietal},{TablaVarietal},'{IdSupervisor}')";
+			string query = $"insert into ranchos values ('{Codigo}',{Hectareas},{TipoVarietal},{TablaVarietal},'{IdSupervisor}')";
 			try
 			{
 				var cmd = new MySqlCommand(query, Conexion.get());
@@ -29,6 +29,28 @@ namespace NomiCamp.Models
 			{
 				return false;
 			}
+		}
+
+		public static List<Rancho> GetRanchos()
+		{
+
+			List<Rancho> lista = new List<Rancho>();
+			string query = "select * from ranchos";
+			var cmd = new MySqlCommand(query, Conexion.get());
+			var reader = cmd.ExecuteReader();
+			while (reader.Read())
+			{
+				lista.Add(new Rancho
+				{
+					Codigo = Convert.ToString(reader["codigo_rancho"]),
+					Hectareas = float.Parse(Convert.ToString(reader["hectareas"])),
+					TipoVarietal = int.Parse(Convert.ToString(reader["tipo_varietal"])),
+					TablaVarietal = int.Parse(Convert.ToString(reader["tabla_varietal"])),
+					IdSupervisor=Convert.ToString(reader["id_supervisor"])
+				});
+			}
+			reader.Close();
+			return lista;
 		}
 
 	}

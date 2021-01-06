@@ -55,11 +55,11 @@ namespace NomiCamp
 
 				if (nuevo.Insert())
 				{
-
+					MessageBox.Show("Insertado");
 				}
 				else
 				{
-
+					MessageBox.Show("Ocurrio un error");
 				}
 			}
 		}

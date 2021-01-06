@@ -28,62 +28,38 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.dvInfoRanchos = new System.Windows.Forms.DataGridView();
-			this.CodigoRancho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Hectareas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TipoVarietal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Supervisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TablaVarietal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dgvInfoRanchos = new System.Windows.Forms.DataGridView();
 			this.btnReporteExcel = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnAdminRanchos = new System.Windows.Forms.PictureBox();
 			this.btnActualizar = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.dvInfoRanchos)).BeginInit();
+			this.CodigoRancho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Hectareas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TipoVarietal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TablaVarietal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Supervisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			((System.ComponentModel.ISupportInitialize)(this.dgvInfoRanchos)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdminRanchos)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// dvInfoRanchos
+			// dgvInfoRanchos
 			// 
-			this.dvInfoRanchos.AllowUserToAddRows = false;
-			this.dvInfoRanchos.AllowUserToDeleteRows = false;
-			this.dvInfoRanchos.AllowUserToResizeColumns = false;
-			this.dvInfoRanchos.AllowUserToResizeRows = false;
-			this.dvInfoRanchos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dvInfoRanchos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dgvInfoRanchos.AllowUserToAddRows = false;
+			this.dgvInfoRanchos.AllowUserToDeleteRows = false;
+			this.dgvInfoRanchos.AllowUserToResizeColumns = false;
+			this.dgvInfoRanchos.AllowUserToResizeRows = false;
+			this.dgvInfoRanchos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvInfoRanchos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodigoRancho,
             this.Hectareas,
             this.TipoVarietal,
-            this.Supervisor,
-            this.TablaVarietal});
-			this.dvInfoRanchos.Location = new System.Drawing.Point(67, 188);
-			this.dvInfoRanchos.Name = "dvInfoRanchos";
-			this.dvInfoRanchos.Size = new System.Drawing.Size(571, 191);
-			this.dvInfoRanchos.TabIndex = 0;
-			// 
-			// CodigoRancho
-			// 
-			this.CodigoRancho.HeaderText = "Código rancho";
-			this.CodigoRancho.Name = "CodigoRancho";
-			// 
-			// Hectareas
-			// 
-			this.Hectareas.HeaderText = "Hectareas";
-			this.Hectareas.Name = "Hectareas";
-			// 
-			// TipoVarietal
-			// 
-			this.TipoVarietal.HeaderText = "Tipo varietal";
-			this.TipoVarietal.Name = "TipoVarietal";
-			// 
-			// Supervisor
-			// 
-			this.Supervisor.HeaderText = "Supervisor";
-			this.Supervisor.Name = "Supervisor";
-			// 
-			// TablaVarietal
-			// 
-			this.TablaVarietal.HeaderText = "Tabla varietal";
-			this.TablaVarietal.Name = "TablaVarietal";
+            this.TablaVarietal,
+            this.Supervisor});
+			this.dgvInfoRanchos.Location = new System.Drawing.Point(67, 188);
+			this.dgvInfoRanchos.Name = "dgvInfoRanchos";
+			this.dgvInfoRanchos.ReadOnly = true;
+			this.dgvInfoRanchos.Size = new System.Drawing.Size(571, 191);
+			this.dgvInfoRanchos.TabIndex = 0;
 			// 
 			// btnReporteExcel
 			// 
@@ -128,6 +104,42 @@
 			this.btnActualizar.TabIndex = 7;
 			this.btnActualizar.Text = "Actualizar";
 			this.btnActualizar.UseVisualStyleBackColor = false;
+			this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+			// 
+			// CodigoRancho
+			// 
+			this.CodigoRancho.HeaderText = "Código rancho";
+			this.CodigoRancho.Name = "CodigoRancho";
+			this.CodigoRancho.ReadOnly = true;
+			this.CodigoRancho.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// Hectareas
+			// 
+			this.Hectareas.HeaderText = "Hectareas";
+			this.Hectareas.Name = "Hectareas";
+			this.Hectareas.ReadOnly = true;
+			this.Hectareas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// TipoVarietal
+			// 
+			this.TipoVarietal.HeaderText = "Tipo varietal";
+			this.TipoVarietal.Name = "TipoVarietal";
+			this.TipoVarietal.ReadOnly = true;
+			this.TipoVarietal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// TablaVarietal
+			// 
+			this.TablaVarietal.HeaderText = "Tabla varietal";
+			this.TablaVarietal.Name = "TablaVarietal";
+			this.TablaVarietal.ReadOnly = true;
+			this.TablaVarietal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// Supervisor
+			// 
+			this.Supervisor.HeaderText = "Supervisor";
+			this.Supervisor.Name = "Supervisor";
+			this.Supervisor.ReadOnly = true;
+			this.Supervisor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
 			// 
 			// formRanchos
 			// 
@@ -139,12 +151,12 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnAdminRanchos);
 			this.Controls.Add(this.btnReporteExcel);
-			this.Controls.Add(this.dvInfoRanchos);
+			this.Controls.Add(this.dgvInfoRanchos);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "formRanchos";
 			this.Text = "formRanchos";
 			this.Load += new System.EventHandler(this.formRanchos_Load);
-			((System.ComponentModel.ISupportInitialize)(this.dvInfoRanchos)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvInfoRanchos)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdminRanchos)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -153,15 +165,15 @@
 
 		#endregion
 
-		private System.Windows.Forms.DataGridView dvInfoRanchos;
-		private System.Windows.Forms.DataGridViewTextBoxColumn CodigoRancho;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Hectareas;
-		private System.Windows.Forms.DataGridViewTextBoxColumn TipoVarietal;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Supervisor;
-		private System.Windows.Forms.DataGridViewTextBoxColumn TablaVarietal;
+		private System.Windows.Forms.DataGridView dgvInfoRanchos;
 		private System.Windows.Forms.Button btnReporteExcel;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.PictureBox btnAdminRanchos;
 		private System.Windows.Forms.Button btnActualizar;
+		private System.Windows.Forms.DataGridViewTextBoxColumn CodigoRancho;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Hectareas;
+		private System.Windows.Forms.DataGridViewTextBoxColumn TipoVarietal;
+		private System.Windows.Forms.DataGridViewTextBoxColumn TablaVarietal;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Supervisor;
 	}
 }
