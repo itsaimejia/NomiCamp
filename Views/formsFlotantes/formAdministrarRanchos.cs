@@ -12,7 +12,35 @@ namespace NomiCamp
 
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
-
+            if (string.IsNullOrEmpty(txtCodigoRancho.Text)) 
+			{
+				MessageBox.Show("Ingresa el codigo de rancho");
+				txtCodigoRancho.Focus();
+			}
+			else
+			if (string.IsNullOrEmpty(txtHectareas.Text)) 
+			{
+				MessageBox.Show("Ingresa las hectareas");
+				txtHectareas.Focus();
+			}
+			else
+            if (string.IsNullOrEmpty(txtTablaVarietal.Text))
+            {
+				MessageBox.Show("Ingresa tabla varietal");
+				txtTablaVarietal.Focus();
+            }
+			else
+            if (string.IsNullOrEmpty(txtTipoVarietal.Text))
+            {
+				MessageBox.Show("Ingresa tipo varietal");
+				txtTipoVarietal.Focus();
+            }
+			else
+			if (cbSupervisor.SelectedIndex.Equals(-1))
+            {
+				MessageBox.Show("Selecciona un supervisor");
+				cbSupervisor.Focus();
+            }
 		}
 
 		private void btnRegresar_Click(object sender, EventArgs e)
