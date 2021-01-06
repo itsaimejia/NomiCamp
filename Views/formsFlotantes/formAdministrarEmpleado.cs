@@ -28,20 +28,20 @@ namespace NomiCamp
 		public void Consultar()
 		{
 			var empleado = Empleado.Select(txtNoEmpleado.Text);
-			if (empleado != null)
+			if (empleado.NoEmpleado != null)
 			{
 				ControlesEditables();
 
 				txtNombre.Text = empleado.Nombre;
 				cbPuesto.Text = empleado.Puesto;
 				txtSalario.Text = empleado.SalarioXDia.ToString();
-
+				btnGuardar.Text = "Actualizar";
 				editar = true;
 			}
 			else
 			{
-				MessageBox.Show("El empleado no existe");
 				ControlesEditables();
+				txtSalario.Text = string.Empty;
 			}
 		}
 
@@ -152,11 +152,6 @@ namespace NomiCamp
 				e.Handled = true;
 				return;
 			}
-			else
-			if (e.KeyChar == (char)Keys.Enter)
-			{
-				
-			}
 		}
 
 		private void btnLimpiar_Click(object sender, EventArgs e)
@@ -171,6 +166,7 @@ namespace NomiCamp
 			txtNombre.Text = string.Empty;
 			cbPuesto.SelectedIndex = -1;
 			txtSalario.Text = string.Empty;
+			btnGuardar.Text = "Guardar";
 		}
 	}
 }

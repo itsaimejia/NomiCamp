@@ -1,4 +1,5 @@
-﻿using NomiCamp.Models;
+﻿using NomiCamp.Excel;
+using NomiCamp.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,12 +15,27 @@ namespace NomiCamp.Views
 {
 	public partial class formEmpleados : Form
 	{
-
+		private List<Empleado> listaEmpleados = new List<Empleado>();
 		public formEmpleados(int ancho, int alto)
 		{
 			InitializeComponent();
 			this.Width = ancho;
 			this.Height = alto;
+		}
+
+		private void formEmpleados_Load(object sender, EventArgs e)
+		{
+
+			dgvInfoEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			dgvInfoEmpleados.Size = new Size(this.Width - 40, this.Height - 200);
+			dgvInfoEmpleados.Location = new Point(20, 150);
+			btnReporteExcel.Location = new Point(this.Width - 140, this.Size.Height - 40);
+			btnAdminEmpleados.Location = new Point(this.Width - 170, 50);
+			label1.Location = new Point(this.Width - 240, 95);
+			btnActualizar.Location = new Point(20, this.Size.Height - 40);
+			listaEmpleados = Empleado.GetEmpleados();
+			ActualizarTabla();
+
 		}
 		public void ActualizarTabla()
 		{
@@ -27,7 +43,7 @@ namespace NomiCamp.Views
 			dgvInfoEmpleados.Refresh();
 
 			ArrayList row;
-			foreach (var emp in Empleado.GetEmpleados())
+			foreach (var emp in listaEmpleados)
 			{
 				row = new ArrayList();
 				row.Add(emp.NoEmpleado);
@@ -37,20 +53,7 @@ namespace NomiCamp.Views
 				dgvInfoEmpleados.Rows.Add(row.ToArray());
 			}
 		}
-		private void formEmpleados_Load(object sender, EventArgs e)
-		{
-			
-			dgvInfoEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-			dgvInfoEmpleados.Size = new Size(this.Width - 40, this.Height - 200);
-			dgvInfoEmpleados.Location = new Point(20, 150);
-			btnReporteExcel.Location = new Point(this.Width - 140, this.Size.Height - 40);
-			btnAdminEmpleados.Location = new Point(this.Width - 170, 50);
-			label1.Location = new Point(this.Width - 240, 95);
-			btnActualizar.Location = new Point(20, this.Size.Height - 40);
-
-			ActualizarTabla();
-			
-		}
+		
 
 		private void btnAdminEmpleados_Click(object sender, EventArgs e)
 		{
@@ -61,7 +64,9 @@ namespace NomiCamp.Views
 
 		private void btnReporteExcel_Click(object sender, EventArgs e)
 		{
-
+			ExcelGenerador excel = new ExcelGenerador();
+			excel.Nombre = DateTime.Today.ToString("dd/MM/yyyy").Replace("/",string.Empty) + "Empleados";
+			excel.ReporteEmpleados(listaEmpleados);
 		}
 
 		private void btnActualizar_Click(object sender, EventArgs e)

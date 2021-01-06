@@ -39,7 +39,7 @@ namespace NomiCamp.Models
 
 		public static Empleado Select(string noEmpleado)
 		{
-			string query = $"select * from empleados where no_empleado= '{noEmpleado}'";
+			string query = $"select * from empleados where no_empleado= {noEmpleado}";
 			try
 			{
 				var cmd = new MySqlCommand(query, Conexion.get());
@@ -55,7 +55,8 @@ namespace NomiCamp.Models
 				}
 				reader.Close();
 				return res;
-			}catch(Exception e)
+			}
+			catch(Exception e)
 			{
 				return null;
 			}
