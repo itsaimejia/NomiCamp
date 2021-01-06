@@ -14,6 +14,7 @@ router.post('/', (req,res)=>{
     if (title && director && year && rating){
         const id = movies.length + 1;
         const newMovie = {...req.body, id};
+        console.log(newMovie);
         movies.push(newMovie);
         res.json(movies);
     }else{

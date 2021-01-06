@@ -17,6 +17,7 @@ namespace NomiCamp
         public formAdministraEmpleado()
         {
             InitializeComponent();
+		
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -28,25 +29,37 @@ namespace NomiCamp
 
         public void consultar()
 		{
-            MessageBox.Show(txtNoEmpleado.Text);
+           
 		}
 
 		private void txtNoEmpleado_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if (e.KeyChar == (char)Keys.Enter)
 			{
-                consultar();
+               
 			}
 		}
 
 		private void btnBuscar_Click(object sender, EventArgs e)
 		{
-			consultar();
+			
 		}
 
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
-		
+			var nuevo = new Empleado()
+			{
+				NoEmpleado = txtNoEmpleado.Text.Trim(),
+				Nombre = txtNombre.Text.Trim(),
+				Puesto = cbPuesto.Text,
+				SalarioXDia = float.Parse(txtSalario.Text.Trim())
+
+			};
+
+			if (nuevo.Insert())
+				MessageBox.Show("insertado");
+			else
+				MessageBox.Show("No insertado");
 
 		}
 	}

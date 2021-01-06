@@ -67,7 +67,6 @@ C:\Users\itsai\OneDrive\Escritorio\nomicamp\NomiCamp\bin\Debug\MySql.Data.xml
 C:\Users\itsai\OneDrive\Escritorio\nomicamp\NomiCamp\obj\Debug\NomiCamp.csprojAssemblyReference.cache
 C:\Users\itsai\OneDrive\Escritorio\nomicamp\NomiCamp\obj\Debug\NomiCamp.exe.config
 C:\Users\itsai\OneDrive\Escritorio\nomicamp\NomiCamp\obj\Debug\NomiCamp.Canvas.resources
-C:\Users\itsai\OneDrive\Escritorio\nomicamp\NomiCamp\obj\Debug\nomicamp_seleccion.Form1.resources
 C:\Users\itsai\OneDrive\Escritorio\nomicamp\NomiCamp\obj\Debug\NomiCamp.Properties.Resources.resources
 C:\Users\itsai\OneDrive\Escritorio\nomicamp\NomiCamp\obj\Debug\NomiCamp.Views.formEmpleados.resources
 C:\Users\itsai\OneDrive\Escritorio\nomicamp\NomiCamp\obj\Debug\NomiCamp.Views.formNominas.resources

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 
+using MySql.Data;
 using MySql.Data.MySqlClient;
 
 namespace NomiCamp.Models
@@ -22,6 +23,40 @@ namespace NomiCamp.Models
 
 		}
 
+		public bool Insert()
+		{
+			string query = $"insert into empleados values ('{NoEmpleado}','{Nombre}','{Puesto}',{SalarioXDia})";
+			try
+			{
+				var cmd = new MySqlCommand(query,Conexion.get());
+				cmd.ExecuteNonQuery();
+				return true;
+			}catch(Exception e)
+			{
+				return false;
+			}
+		}
+
+		public static List<Empleado> GetEmpleados()
+		{ 
+
+			List<Empleado> lista = new List<Empleado>();
+			string query = "select * from empleados";
+			var cmd = new MySqlCommand(query, Conexion.get());
+			var reader = cmd.ExecuteReader();
+			while (reader.Read())
+			{
+				lista.Add(new Empleado
+				{
+					NoEmpleado = Convert.ToString(reader["no_empleado"]),
+					Nombre = Convert.ToString(reader["nombre"]),
+					Puesto = Convert.ToString(reader["puesto"]),
+					SalarioXDia=float.Parse(Convert.ToString(reader["salario_diario"]))
+				});
+			}
+			reader.Close();
+			return lista;
+		}
 
 	}
 }

@@ -123,6 +123,16 @@ namespace NomiCamp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap proximo1 {
+            get {
+                object obj = ResourceManager.GetObject("proximo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap window_minimize_icon_144028 {
             get {
                 object obj = ResourceManager.GetObject("window_minimize_icon_144028", resourceCulture);
