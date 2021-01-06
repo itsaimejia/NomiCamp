@@ -14,5 +14,21 @@ namespace NomiCamp.Models
 		public int TablaVarietal { get; set; }
 		public string IdSupervisor { get; set; }
 
+		public bool Insert()
+		{
+
+			string query = $"insert into empleados values ('{Codigo}',{Hectareas},{TipoVarietal},{TablaVarietal},'{IdSupervisor}')";
+			try
+			{
+				var cmd = new MySqlCommand(query, Conexion.get());
+				cmd.ExecuteNonQuery();
+				return true;
+			}
+			catch (Exception e)
+			{
+				return false;
+			}
+		}
+
 	}
 }

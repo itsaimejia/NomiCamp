@@ -43,6 +43,10 @@
 			// 
 			// dvInfoRanchos
 			// 
+			this.dvInfoRanchos.AllowUserToAddRows = false;
+			this.dvInfoRanchos.AllowUserToDeleteRows = false;
+			this.dvInfoRanchos.AllowUserToResizeColumns = false;
+			this.dvInfoRanchos.AllowUserToResizeRows = false;
 			this.dvInfoRanchos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dvInfoRanchos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodigoRancho,
