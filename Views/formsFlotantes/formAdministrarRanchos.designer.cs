@@ -44,6 +44,7 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.btnGuardar = new System.Windows.Forms.Button();
 			this.label5 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
@@ -146,13 +147,13 @@
 			// 
 			// cbSupervisor
 			// 
+			this.cbSupervisor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbSupervisor.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cbSupervisor.FormattingEnabled = true;
-			this.cbSupervisor.Location = new System.Drawing.Point(124, 261);
+			this.cbSupervisor.Location = new System.Drawing.Point(125, 280);
 			this.cbSupervisor.Name = "cbSupervisor";
 			this.cbSupervisor.Size = new System.Drawing.Size(207, 31);
 			this.cbSupervisor.TabIndex = 15;
-			this.cbSupervisor.Text = "Seleccionar Supervisor";
 			// 
 			// label6
 			// 
@@ -208,12 +209,23 @@
 			this.label5.TabIndex = 28;
 			this.label5.Text = "*En caso de querer eliminar al empleado seleccione remover";
 			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.Location = new System.Drawing.Point(121, 254);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(193, 23);
+			this.label7.TabIndex = 31;
+			this.label7.Text = "Seleccionar supervisor";
+			// 
 			// formAdministrarRanchos
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(450, 450);
 			this.ControlBox = false;
+			this.Controls.Add(this.label7);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.btnGuardar);
 			this.Controls.Add(this.label5);
@@ -259,5 +271,6 @@
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button btnGuardar;
 		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label7;
 	}
 }

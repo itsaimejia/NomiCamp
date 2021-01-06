@@ -43,6 +43,7 @@ namespace NomiCamp
 			this.btnRemover = new System.Windows.Forms.Button();
 			this.btnGuardar = new System.Windows.Forms.Button();
 			this.label5 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
@@ -99,7 +100,7 @@ namespace NomiCamp
 			// txtSalario
 			// 
 			this.txtSalario.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtSalario.Location = new System.Drawing.Point(144, 280);
+			this.txtSalario.Location = new System.Drawing.Point(144, 289);
 			this.txtSalario.Name = "txtSalario";
 			this.txtSalario.Size = new System.Drawing.Size(148, 31);
 			this.txtSalario.TabIndex = 4;
@@ -107,17 +108,17 @@ namespace NomiCamp
 			// 
 			// cbPuesto
 			// 
+			this.cbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbPuesto.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cbPuesto.FormattingEnabled = true;
 			this.cbPuesto.Items.AddRange(new object[] {
             "Pizca",
             "Trailero",
             "Otra cosa "});
-			this.cbPuesto.Location = new System.Drawing.Point(144, 201);
+			this.cbPuesto.Location = new System.Drawing.Point(144, 220);
 			this.cbPuesto.Name = "cbPuesto";
 			this.cbPuesto.Size = new System.Drawing.Size(148, 31);
 			this.cbPuesto.TabIndex = 3;
-			this.cbPuesto.Text = "Puesto";
 			// 
 			// label2
 			// 
@@ -143,7 +144,7 @@ namespace NomiCamp
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(141, 254);
+			this.label4.Location = new System.Drawing.Point(141, 263);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(116, 23);
 			this.label4.TabIndex = 7;
@@ -196,12 +197,23 @@ namespace NomiCamp
 			this.label5.TabIndex = 28;
 			this.label5.Text = "*En caso de querer eliminar al empleado seleccione remover";
 			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.Location = new System.Drawing.Point(140, 194);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(67, 23);
+			this.label6.TabIndex = 31;
+			this.label6.Text = "Puesto";
+			// 
 			// formAdministraEmpleado
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(450, 450);
 			this.ControlBox = false;
+			this.Controls.Add(this.label6);
 			this.Controls.Add(this.btnRemover);
 			this.Controls.Add(this.btnGuardar);
 			this.Controls.Add(this.label5);
@@ -244,6 +256,7 @@ namespace NomiCamp
 		private System.Windows.Forms.Button btnRemover;
 		private System.Windows.Forms.Button btnGuardar;
 		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label6;
 	}
 }
 
