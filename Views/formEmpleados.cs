@@ -18,7 +18,6 @@ namespace NomiCamp.Views
 		public formEmpleados(int ancho, int alto)
 		{
 			InitializeComponent();
-			ActualizarTabla();
 			this.Width = ancho;
 			this.Height = alto;
 		}
