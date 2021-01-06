@@ -41,7 +41,27 @@ namespace NomiCamp
             {
 				MessageBox.Show("Selecciona un supervisor");
 				cbSupervisor.Focus();
-            }
+			}
+			else
+			{
+				var nuevo = new Rancho
+				{
+					Codigo = txtCodigoRancho.Text,
+					Hectareas = float.Parse(txtHectareas.Text),
+					TipoVarietal = int.Parse(txtTipoVarietal.Text),
+					TablaVarietal = int.Parse(txtTablaVarietal.Text),
+					IdSupervisor = cbSupervisor.Text
+				};
+
+				if (nuevo.Insert())
+				{
+
+				}
+				else
+				{
+
+				}
+			}
 		}
 
 		private void btnRegresar_Click(object sender, EventArgs e)
