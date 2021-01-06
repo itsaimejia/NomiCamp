@@ -47,19 +47,44 @@ namespace NomiCamp
 
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
-			var nuevo = new Empleado()
+			if (string.IsNullOrEmpty(txtNoEmpleado.Text))
 			{
-				NoEmpleado = txtNoEmpleado.Text.Trim(),
-				Nombre = txtNombre.Text.Trim(),
-				Puesto = cbPuesto.Text,
-				SalarioXDia = float.Parse(txtSalario.Text.Trim())
-
-			};
-
-			if (nuevo.Insert())
-				MessageBox.Show("insertado");
+				MessageBox.Show("Ingresa el numero de empleado");
+				txtNoEmpleado.Focus();
+			}
 			else
-				MessageBox.Show("No insertado");
+			if (string.IsNullOrEmpty(txtNombre.Text))
+			{
+				MessageBox.Show("Ingresa el nombre");
+				txtNombre.Focus();
+			}
+			else
+			if (cbPuesto.SelectedIndex.Equals(-1))
+            {
+				MessageBox.Show("Selecciona un puesto");
+				cbPuesto.Focus();
+            }
+			else
+            if (string.IsNullOrEmpty(txtSalario.Text))
+            {
+				MessageBox.Show("Ingresa el salario");
+				txtSalario.Focus();
+            }
+			else
+			{
+				var nuevo = new Empleado()
+				{
+					NoEmpleado = txtNoEmpleado.Text.Trim(),
+					Nombre = txtNombre.Text.Trim(),
+					Puesto = cbPuesto.Text,
+					SalarioXDia = float.Parse(txtSalario.Text.Trim())
+
+				};
+				nuevo.Insert();
+			}
+			
+
+			
 
 		}
 
