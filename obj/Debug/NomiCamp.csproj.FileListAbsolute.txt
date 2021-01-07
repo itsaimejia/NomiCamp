@@ -118,3 +118,11 @@ C:\Users\itsai\OneDrive\Escritorio\nomicamp\NomiCamp\bin\Debug\DocumentFormat.Op
 C:\Users\itsai\OneDrive\Escritorio\nomicamp\NomiCamp\bin\Debug\SpreadsheetLight.xml
 C:\Users\itsai\OneDrive\Escritorio\nomicamp\NomiCamp\bin\Debug\System.IO.Packaging.xml
 C:\Users\itsai\OneDrive\Escritorio\nomicamp\NomiCamp\obj\Debug\NomiCamp.Views.formReportes.resources
+C:\Users\Hp 88122\Documents\GitHub\NomiCamp\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Hp 88122\Documents\GitHub\NomiCamp\bin\Debug\SpreadsheetLight.dll
+C:\Users\Hp 88122\Documents\GitHub\NomiCamp\bin\Debug\System.Drawing.Common.dll
+C:\Users\Hp 88122\Documents\GitHub\NomiCamp\bin\Debug\System.IO.Packaging.dll
+C:\Users\Hp 88122\Documents\GitHub\NomiCamp\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Hp 88122\Documents\GitHub\NomiCamp\bin\Debug\SpreadsheetLight.xml
+C:\Users\Hp 88122\Documents\GitHub\NomiCamp\bin\Debug\System.IO.Packaging.xml
+C:\Users\Hp 88122\Documents\GitHub\NomiCamp\obj\Debug\NomiCamp.Views.formReportes.resources
