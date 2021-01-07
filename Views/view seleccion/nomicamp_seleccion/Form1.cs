@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NomiCamp.Models;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace nomicamp_seleccion
 {
 	public partial class Form1 : Form
 	{
+		List<EmpleadoDispo> listaEmpleados = new List<EmpleadoDispo>();
 		public Form1()
 		{
 			InitializeComponent();
@@ -28,14 +31,32 @@ namespace nomicamp_seleccion
 			lblTitulo.Location = new Point(panel1.Size.Width / 2 - 50, 10);
 			btnCargarLista.Location = new Point(this.Size.Width / 2 - 63, this.Size.Height - 40);
 
-			dvSelEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-			dvSelEmpleados.Size = new Size(this.Width - 40, this.Height - 200);
-			dvSelEmpleados.Location = new Point(20, 120);
+			dgvSelEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			dgvSelEmpleados.Size = new Size(this.Width - 40, this.Height - 200);
+			dgvSelEmpleados.Location = new Point(20, 120);
 
 			label2.Location = new Point(20, 50);
 			txtNoEmpleado.Location = new Point(20, 80);
 			btnBuscar.Location = new Point(175, 80);
 
+			listaEmpleados = EmpleadoDispo.GetEmpleados();
+			ActualizarTabla();
+
+		}
+		public void ActualizarTabla()
+		{
+			dgvSelEmpleados.Rows.Clear();
+			dgvSelEmpleados.Refresh();
+
+			ArrayList row;
+			foreach (var emp in listaEmpleados)
+			{
+				row = new ArrayList();
+				row.Add(emp.NoEmpleado);
+				row.Add(emp.Nombre);
+				row.Add(emp.Puesto);
+				dgvSelEmpleados.Rows.Add(row.ToArray());
+			}
 		}
 
 		private void btnCerrar_Click(object sender, EventArgs e)
