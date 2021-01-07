@@ -14,16 +14,16 @@ namespace NomiCamp.Models
 	{
 		public string Fecha { get; set; }
 		public int Disponible { get; set; }
+		
 
 
 		public EmpleadoDispo()
-		{
-
+		{ 
 		}
 
 		public void Insert()
 		{
-			if (Consultar() != 1)
+			if (!Existe())
 			{
 				string query = $"insert into emp_disponibles values ('{Fecha}','{NoEmpleado}',{Disponible})";
 				try
@@ -38,27 +38,40 @@ namespace NomiCamp.Models
 		}
 
 
-		public int Consultar()
+		public bool Existe()
 		{
-			string query = $"select * from emp_disponibles where no_empleado='{NoEmpleado}'";
+			bool e = false;
+			string aux = "";
+			string query = $"select * from emp_disponibles where fecha='{Fecha}' and no_empleado='{NoEmpleado}'";
 
 			try
 			{
 				var cmd = new MySqlCommand(query, Conexion.get());
-				return cmd.ExecuteNonQuery();
-			}catch(Exception e)
-			{
-				return 0;
+				var reader= cmd.ExecuteReader();
+
+				var res = new Empleado();
+				while (reader.Read())
+				{
+					aux = Convert.ToString(reader["no_empleado"]);
+				}
+				e = (aux == string.Empty) ? false : true;
+				reader.Close();
+
 			}
+			catch(Exception )
+			{
+				
+			}
+			return e;
 		}
 
 		
 
 		
-		public static List<EmpleadoDispo> GetEmpleados()
+		public void LlenarTabla()
 		{ 
 
-			List<EmpleadoDispo> lista = new List<EmpleadoDispo>();
+			
 			string query = "select * from empleados where not puesto= 'supervisor'";
 			var cmd = new MySqlCommand(query, Conexion.get());
 			var reader = cmd.ExecuteReader();
@@ -73,12 +86,33 @@ namespace NomiCamp.Models
 					Disponible = 1
 				};
 				ed.Insert();
-				lista.Add(ed);
+			}
+			reader.Close();
+		}
+
+		public static List<EmpleadoDispo> LlenarLista()
+		{
+			List<EmpleadoDispo> lista = new List<EmpleadoDispo>();
+			string query = "select empleados.no_empleado, empleados.nombre, empleados.puesto " +
+				"from empleados, emp_disponibles " +
+				$"where not empleados.puesto='supervisor' and emp_disponibles.disponible = {1}";
+			var cmd = new MySqlCommand(query, Conexion.get());
+			var reader = cmd.ExecuteReader();
+			while (reader.Read())
+			{
+				var ed = new EmpleadoDispo()
+				{
+					NoEmpleado = Convert.ToString(reader["no_empleado"]),
+					Nombre = Convert.ToString(reader["nombre"]),
+					Puesto = Convert.ToString(reader["puesto"]),
+				};
+				if (!lista.Exists(x => x.NoEmpleado == ed.NoEmpleado))
+					lista.Add(ed);
+
 			}
 			reader.Close();
 
 			return lista;
 		}
-
 	}
 }

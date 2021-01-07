@@ -118,7 +118,8 @@ namespace NomiCamp
 			this.cbPuesto.Items.AddRange(new object[] {
             "Pizca",
             "Trailero",
-            "Otra cosa "});
+            "Otra cosa ",
+            "supervisor"});
 			this.cbPuesto.Location = new System.Drawing.Point(144, 220);
 			this.cbPuesto.Name = "cbPuesto";
 			this.cbPuesto.Size = new System.Drawing.Size(148, 31);

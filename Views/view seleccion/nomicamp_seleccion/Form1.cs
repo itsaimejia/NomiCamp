@@ -39,7 +39,7 @@ namespace nomicamp_seleccion
 			txtNoEmpleado.Location = new Point(20, 80);
 			btnBuscar.Location = new Point(175, 80);
 
-			listaEmpleados = EmpleadoDispo.GetEmpleados();
+			listaEmpleados = EmpleadoDispo.LlenarLista();
 			ActualizarTabla();
 
 		}
@@ -67,6 +67,11 @@ namespace nomicamp_seleccion
 		private void btnMinimizar_Click(object sender, EventArgs e)
 		{
 			this.WindowState = FormWindowState.Minimized;
+		}
+
+		private void btnCargarLista_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

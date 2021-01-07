@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -42,6 +43,7 @@ namespace NomiCamp.Excel
 			doc.ImportDataTable(1, 1, dt, true);
 
 			doc.SaveAs(path);
+			Process.Start(path);
 
 		}
 	}
