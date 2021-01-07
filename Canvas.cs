@@ -98,5 +98,17 @@ namespace NomiCamp
 				FillCanvas(reg);
 			}
 		}
+
+		private void btnReportes_Click(object sender, EventArgs e)
+		{
+			Form frm = panelPrincipal.Controls.OfType<Form>().Where(o => o.Name.Contains("formReportes")).FirstOrDefault();
+			if (frm == null)
+			{
+				panelPrincipal.Controls.Clear();
+				var form = Application.OpenForms.OfType<formReportes>().FirstOrDefault();
+				var reg = form ?? new formReportes(panelPrincipal.Width, panelPrincipal.Height);
+				FillCanvas(reg);
+			}
+		}
 	}
 }

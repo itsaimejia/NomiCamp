@@ -33,7 +33,7 @@
 			this.btnCerrar = new System.Windows.Forms.PictureBox();
 			this.btnMinimizar = new System.Windows.Forms.PictureBox();
 			this.btnCargarLista = new System.Windows.Forms.Button();
-			this.dvSelEmpleados = new System.Windows.Forms.DataGridView();
+			this.dgvSelEmpleados = new System.Windows.Forms.DataGridView();
 			this.NoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +44,7 @@
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dvSelEmpleados)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvSelEmpleados)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -106,22 +106,22 @@
 			this.btnCargarLista.Text = "Cargar lista";
 			this.btnCargarLista.UseVisualStyleBackColor = false;
 			// 
-			// dvSelEmpleados
+			// dgvSelEmpleados
 			// 
-			this.dvSelEmpleados.AllowUserToAddRows = false;
-			this.dvSelEmpleados.AllowUserToDeleteRows = false;
-			this.dvSelEmpleados.AllowUserToResizeColumns = false;
-			this.dvSelEmpleados.AllowUserToResizeRows = false;
-			this.dvSelEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dvSelEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dgvSelEmpleados.AllowUserToAddRows = false;
+			this.dgvSelEmpleados.AllowUserToDeleteRows = false;
+			this.dgvSelEmpleados.AllowUserToResizeColumns = false;
+			this.dgvSelEmpleados.AllowUserToResizeRows = false;
+			this.dgvSelEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvSelEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NoEmpleado,
             this.Nombre,
             this.Puesto,
             this.Seleccionar});
-			this.dvSelEmpleados.Location = new System.Drawing.Point(85, 116);
-			this.dvSelEmpleados.Name = "dvSelEmpleados";
-			this.dvSelEmpleados.Size = new System.Drawing.Size(1081, 466);
-			this.dvSelEmpleados.TabIndex = 4;
+			this.dgvSelEmpleados.Location = new System.Drawing.Point(85, 116);
+			this.dgvSelEmpleados.Name = "dgvSelEmpleados";
+			this.dgvSelEmpleados.Size = new System.Drawing.Size(1081, 466);
+			this.dgvSelEmpleados.TabIndex = 4;
 			// 
 			// NoEmpleado
 			// 
@@ -189,7 +189,7 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.txtNoEmpleado);
 			this.Controls.Add(this.btnCargarLista);
-			this.Controls.Add(this.dvSelEmpleados);
+			this.Controls.Add(this.dgvSelEmpleados);
 			this.Controls.Add(this.panel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.MaximizeBox = false;
@@ -202,7 +202,7 @@
 			this.panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dvSelEmpleados)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvSelEmpleados)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -216,7 +216,7 @@
 		private System.Windows.Forms.PictureBox btnMinimizar;
 		private System.Windows.Forms.Label lblTitulo;
 		private System.Windows.Forms.Button btnCargarLista;
-		private System.Windows.Forms.DataGridView dvSelEmpleados;
+		private System.Windows.Forms.DataGridView dgvSelEmpleados;
 		private System.Windows.Forms.DataGridViewTextBoxColumn NoEmpleado;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Puesto;

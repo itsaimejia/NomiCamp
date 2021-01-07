@@ -31,28 +31,28 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Canvas));
 			this.panelMenu = new System.Windows.Forms.Panel();
 			this.linkAdministrar = new System.Windows.Forms.LinkLabel();
-			this.button4 = new System.Windows.Forms.Button();
+			this.btnReportes = new System.Windows.Forms.Button();
 			this.btnNominas = new System.Windows.Forms.Button();
 			this.btnPanelRanchos = new System.Windows.Forms.Button();
 			this.btnPanelEmpleados = new System.Windows.Forms.Button();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panelPrincipal = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.lblTitulo = new System.Windows.Forms.Label();
 			this.btnCerrar = new System.Windows.Forms.PictureBox();
 			this.btnMinimizar = new System.Windows.Forms.PictureBox();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.lblTitulo = new System.Windows.Forms.Label();
 			this.panelMenu.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelMenu
 			// 
 			this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
 			this.panelMenu.Controls.Add(this.linkAdministrar);
-			this.panelMenu.Controls.Add(this.button4);
+			this.panelMenu.Controls.Add(this.btnReportes);
 			this.panelMenu.Controls.Add(this.btnNominas);
 			this.panelMenu.Controls.Add(this.btnPanelRanchos);
 			this.panelMenu.Controls.Add(this.btnPanelEmpleados);
@@ -78,18 +78,19 @@
 			this.linkAdministrar.Text = "Administrar ";
 			this.linkAdministrar.VisitedLinkColor = System.Drawing.Color.White;
 			// 
-			// button4
+			// btnReportes
 			// 
-			this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-			this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-			this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button4.Location = new System.Drawing.Point(0, 499);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(200, 76);
-			this.button4.TabIndex = 3;
-			this.button4.Text = "Reportes";
-			this.button4.UseVisualStyleBackColor = false;
+			this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+			this.btnReportes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+			this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnReportes.Location = new System.Drawing.Point(0, 499);
+			this.btnReportes.Name = "btnReportes";
+			this.btnReportes.Size = new System.Drawing.Size(200, 76);
+			this.btnReportes.TabIndex = 3;
+			this.btnReportes.Text = "Reportes";
+			this.btnReportes.UseVisualStyleBackColor = false;
+			this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
 			// 
 			// btnNominas
 			// 
@@ -133,6 +134,16 @@
 			this.btnPanelEmpleados.UseVisualStyleBackColor = false;
 			this.btnPanelEmpleados.Click += new System.EventHandler(this.btnPanelEmpleados_Click);
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = global::NomiCamp.Properties.Resources.logooo;
+			this.pictureBox1.Location = new System.Drawing.Point(36, 51);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(128, 116);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox1.TabIndex = 0;
+			this.pictureBox1.TabStop = false;
+			// 
 			// panelPrincipal
 			// 
 			this.panelPrincipal.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -151,6 +162,18 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1187, 50);
 			this.panel1.TabIndex = 1;
+			// 
+			// lblTitulo
+			// 
+			this.lblTitulo.AutoSize = true;
+			this.lblTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTitulo.ForeColor = System.Drawing.Color.White;
+			this.lblTitulo.Location = new System.Drawing.Point(406, 12);
+			this.lblTitulo.Name = "lblTitulo";
+			this.lblTitulo.Size = new System.Drawing.Size(120, 25);
+			this.lblTitulo.TabIndex = 0;
+			this.lblTitulo.Text = "Administrar";
 			// 
 			// btnCerrar
 			// 
@@ -176,28 +199,6 @@
 			this.btnMinimizar.TabStop = false;
 			this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
 			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = global::NomiCamp.Properties.Resources.logooo;
-			this.pictureBox1.Location = new System.Drawing.Point(36, 51);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(128, 116);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
-			// 
-			// lblTitulo
-			// 
-			this.lblTitulo.AutoSize = true;
-			this.lblTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblTitulo.ForeColor = System.Drawing.Color.White;
-			this.lblTitulo.Location = new System.Drawing.Point(406, 12);
-			this.lblTitulo.Name = "lblTitulo";
-			this.lblTitulo.Size = new System.Drawing.Size(120, 25);
-			this.lblTitulo.TabIndex = 0;
-			this.lblTitulo.Text = "Administrar";
-			// 
 			// Canvas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,11 +217,11 @@
 			this.Load += new System.EventHandler(this.Canvas_Load);
 			this.panelMenu.ResumeLayout(false);
 			this.panelMenu.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -234,7 +235,7 @@
 		private System.Windows.Forms.PictureBox btnMinimizar;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button btnPanelEmpleados;
-		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Button btnReportes;
 		private System.Windows.Forms.Button btnNominas;
 		private System.Windows.Forms.Button btnPanelRanchos;
 		private System.Windows.Forms.LinkLabel linkAdministrar;

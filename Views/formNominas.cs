@@ -31,5 +31,10 @@ namespace NomiCamp.Views
 
 
 		}
+
+		private void btnReporteExcel_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
