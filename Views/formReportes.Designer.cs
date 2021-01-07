@@ -29,16 +29,33 @@
 		private void InitializeComponent()
 		{
 			this.dgvReportes = new System.Windows.Forms.DataGridView();
+			this.Archivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dgvReportes
 			// 
-			this.dgvReportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvReportes.AllowUserToAddRows = false;
+			this.dgvReportes.AllowUserToDeleteRows = false;
+			this.dgvReportes.AllowUserToResizeColumns = false;
+			this.dgvReportes.AllowUserToResizeRows = false;
+			this.dgvReportes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Archivo});
 			this.dgvReportes.Location = new System.Drawing.Point(180, 123);
 			this.dgvReportes.Name = "dgvReportes";
 			this.dgvReportes.Size = new System.Drawing.Size(240, 150);
 			this.dgvReportes.TabIndex = 0;
+			this.dgvReportes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReportes_CellContentClick);
+			// 
+			// Archivo
+			// 
+			this.Archivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Archivo.HeaderText = "Archivo";
+			this.Archivo.Name = "Archivo";
+			this.Archivo.ReadOnly = true;
+			this.Archivo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Archivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			this.Archivo.ToolTipText = "Doble click para abrir el archivo";
 			// 
 			// formReportes
 			// 
@@ -59,5 +76,6 @@
 		#endregion
 
 		private System.Windows.Forms.DataGridView dgvReportes;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Archivo;
 	}
 }

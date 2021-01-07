@@ -72,7 +72,7 @@
       <DependentUpon>Canvas.cs</DependentUpon>
     </Compile>
     <Compile Include="Excel\ExcelGenerador.cs" />
-    <Compile Include="Excel\Archivo.cs" />
+    <Compile Include="Excel\Archivos.cs" />
     <Compile Include="Models\Conexion.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\Rancho.cs" />

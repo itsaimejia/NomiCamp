@@ -1,8 +1,10 @@
 ﻿using NomiCamp.Excel;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,7 +28,28 @@ namespace NomiCamp.Views
 			dgvReportes.Size = new Size(this.Width - 40, this.Height - 100);
 			dgvReportes.Location = new Point(20, 50);
 
-			dgvReportes.DataSource = Archivo.GetArchivos();
+			ActualizarLista();
+		}
+
+		public void ActualizarLista()
+		{
+			dgvReportes.Rows.Clear();
+			dgvReportes.Refresh();
+			ArrayList row;
+			foreach (var ar in Archivos.GetArchivos())
+			{
+				row = new ArrayList();
+				row.Add(ar.Nombre);
+				dgvReportes.Rows.Add(row.ToArray());
+			}
+
+		}
+
+		private void dgvReportes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			DataGridViewRow datos = dgvReportes.Rows[e.RowIndex];
+			string path = datos.Cells["Archivo"].Value.ToString();
+			Process.Start(path);
 		}
 	}
 }
