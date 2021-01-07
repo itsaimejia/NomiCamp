@@ -41,7 +41,7 @@
             this.cbSupervisor = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTipoVarietal = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRemover = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -180,19 +180,19 @@
             this.txtTipoVarietal.Size = new System.Drawing.Size(109, 31);
             this.txtTipoVarietal.TabIndex = 3;
             // 
-            // button1
+            // btnRemover
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Enabled = false;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(11, 396);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 32);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Remover";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRemover.BackColor = System.Drawing.Color.Red;
+            this.btnRemover.Enabled = false;
+            this.btnRemover.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemover.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemover.Location = new System.Drawing.Point(11, 396);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(98, 32);
+            this.btnRemover.TabIndex = 30;
+            this.btnRemover.Text = "Remover";
+            this.btnRemover.UseVisualStyleBackColor = false;
             // 
             // btnGuardar
             // 
@@ -250,7 +250,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
@@ -292,7 +292,7 @@
 		private System.Windows.Forms.ComboBox cbSupervisor;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox txtTipoVarietal;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnRemover;
 		private System.Windows.Forms.Button btnGuardar;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label7;
