@@ -125,8 +125,6 @@ namespace NomiCamp
 				txtTipoVarietal.Text = rancho.TipoVarietal.ToString();
 				txtTablaVarietal.Text = rancho.TablaVarietal.ToString();
 				cbSupervisor.Text = rancho.IdSupervisor;
-
-				ControlesEditables();
             }
             else
             {

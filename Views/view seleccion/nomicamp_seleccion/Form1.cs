@@ -30,7 +30,6 @@ namespace nomicamp_seleccion
 			this.Size = new Size(Screen.PrimaryScreen.WorkingArea.Size.Width, Screen.PrimaryScreen.WorkingArea.Size.Height);
 			lblTitulo.Location = new Point(panel1.Size.Width / 2 - 50, 10);
 			btnCargarLista.Location = new Point(this.Size.Width / 2 - 63, this.Size.Height - 40);
-			btnActualizar.Location = new Point(20, this.Size.Height - 40);
 
 			dgvSelEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 			dgvSelEmpleados.Size = new Size(this.Width - 40, this.Height - 200);

@@ -71,7 +71,6 @@ namespace NomiCamp.Views
 
 		private void btnActualizar_Click(object sender, EventArgs e)
 		{
-			listaEmpleados = Empleado.GetEmpleados();
 			ActualizarTabla();
 		}
 	}

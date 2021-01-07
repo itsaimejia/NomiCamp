@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace NomiCamp.Excel
 {
-	class Archivos
+	class Archivo
 	{
 		public string Nombre { get; set; }
 
-		public static List<Archivos> GetArchivos()
+		public static List<Archivo> GetArchivos()
 		{
            string[] files = System.IO.Directory.GetFiles(@"C:\Archivos Excel\");
-           var lista = new List<Archivos>();
+           var lista = new List<Archivo>();
             foreach (string item in files)
             {
-                lista.Add(new Archivos()
+                lista.Add(new Archivo()
                 {
                     Nombre = item
                 });

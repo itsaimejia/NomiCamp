@@ -66,7 +66,6 @@ namespace NomiCamp.Views
 			}
 		}
 
-<<<<<<< Updated upstream
         private void btnReporteExcel_Click(object sender, EventArgs e)
         {
 			ExcelGenerador excel = new ExcelGenerador();
@@ -74,11 +73,4 @@ namespace NomiCamp.Views
 			excel.ReporteRanchos(listaRanchos);
 		}
     }
-=======
-		private void btnReporteExcel_Click(object sender, EventArgs e)
-		{
-
-		}
-	}
->>>>>>> Stashed changes
 }
