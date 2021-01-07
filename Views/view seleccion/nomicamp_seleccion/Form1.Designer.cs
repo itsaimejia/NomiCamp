@@ -41,6 +41,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtNoEmpleado = new System.Windows.Forms.TextBox();
 			this.btnBuscar = new System.Windows.Forms.PictureBox();
+			this.btnActualizar = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -105,6 +106,7 @@
 			this.btnCargarLista.TabIndex = 5;
 			this.btnCargarLista.Text = "Cargar lista";
 			this.btnCargarLista.UseVisualStyleBackColor = false;
+			this.btnCargarLista.Click += new System.EventHandler(this.btnCargarLista_Click);
 			// 
 			// dgvSelEmpleados
 			// 
@@ -179,12 +181,24 @@
 			this.btnBuscar.TabIndex = 11;
 			this.btnBuscar.TabStop = false;
 			// 
+			// btnActualizar
+			// 
+			this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+			this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnActualizar.Location = new System.Drawing.Point(86, 594);
+			this.btnActualizar.Name = "btnActualizar";
+			this.btnActualizar.Size = new System.Drawing.Size(74, 26);
+			this.btnActualizar.TabIndex = 14;
+			this.btnActualizar.Text = "Actualizar";
+			this.btnActualizar.UseVisualStyleBackColor = false;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1257, 632);
 			this.ControlBox = false;
+			this.Controls.Add(this.btnActualizar);
 			this.Controls.Add(this.btnBuscar);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.txtNoEmpleado);
@@ -224,6 +238,7 @@
 		private System.Windows.Forms.PictureBox btnBuscar;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox txtNoEmpleado;
+		private System.Windows.Forms.Button btnActualizar;
 	}
 }
 
