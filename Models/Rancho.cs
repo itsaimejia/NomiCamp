@@ -57,6 +57,22 @@ namespace NomiCamp.Models
 			}
 		}
 
+		public bool Update()
+		{
+			String query = $"update ranchos set hectareas={Hectareas},tipo_varietal={TipoVarietal},tabla_varietal={TablaVarietal}, id_supervisor='{IdSupervisor}'" +
+				$"where codigo_rancho='{Codigo}'";
+			try
+			{
+				var cmd = new MySqlCommand(query, Conexion.get());
+				cmd.ExecuteNonQuery();
+				return true;
+			}
+			catch (Exception e)
+			{
+				return false;
+			}
+		}
+
 		public static List<Rancho> GetRanchos()
 		{
 
