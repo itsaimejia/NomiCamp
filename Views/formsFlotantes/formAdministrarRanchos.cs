@@ -102,7 +102,11 @@ namespace NomiCamp
 
 		private void ControlesEditables()
         {
-			
+			txtHectareas.Enabled = true;
+			txtCodigoRancho.Enabled = true;
+			txtTablaVarietal.Enabled = true;
+			txtTipoVarietal.Enabled = true;
+			cbSupervisor.Enabled = true;	
         }
 		private void Limpiar()
 		{
