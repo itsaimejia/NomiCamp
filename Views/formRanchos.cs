@@ -1,5 +1,4 @@
-﻿using NomiCamp.Excel;
-using NomiCamp.Models;
+﻿using NomiCamp.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,7 +14,6 @@ namespace NomiCamp.Views
 {
 	public partial class formRanchos : Form
 	{
-		private List<Rancho> listaRanchos = new List<Rancho>();
 		public formRanchos(int ancho, int alto)
 		{
 			InitializeComponent();
@@ -32,7 +30,6 @@ namespace NomiCamp.Views
 			btnAdminRanchos.Location = new Point(this.Width - 170, 50);
 			label1.Location = new Point(this.Width - 220, 95);
 			btnActualizar.Location = new Point(20, this.Size.Height - 40);
-			listaRanchos = Rancho.GetRanchos();
 			ActualizarTabla();
 		}
 
@@ -44,7 +41,6 @@ namespace NomiCamp.Views
 
 		private void btnActualizar_Click(object sender, EventArgs e)
 		{
-			listaRanchos = Rancho.GetRanchos();
 			ActualizarTabla();
 		}
 
@@ -54,7 +50,7 @@ namespace NomiCamp.Views
 			dgvInfoRanchos.Refresh();
 
 			ArrayList row;
-			foreach (var r in listaRanchos)
+			foreach (var r in Rancho.GetRanchos())
 			{
 				row = new ArrayList();
 				row.Add(r.Codigo);
@@ -65,12 +61,5 @@ namespace NomiCamp.Views
 				dgvInfoRanchos.Rows.Add(row.ToArray());
 			}
 		}
-
-        private void btnReporteExcel_Click(object sender, EventArgs e)
-        {
-			ExcelGenerador excel = new ExcelGenerador();
-			excel.Nombre = DateTime.Today.ToString("dd/MM/yyyy").Replace("/", string.Empty) + "Ranchos";
-			excel.ReporteRanchos(listaRanchos);
-		}
-    }
+	}
 }
