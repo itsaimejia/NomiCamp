@@ -85,9 +85,25 @@ namespace NomiCamp
 
 		private void btnBuscar_Click(object sender, EventArgs e)
 		{
-
+			Consultar();
 		}
 
+		private void Consultar()
+        {
+			var rancho = Rancho.Select(txtCodigoRancho.Text);
+			if (rancho != null)
+			{
+				txtHectareas.Text = rancho.Hectareas.ToString();
+				txtTipoVarietal.Text = rancho.TipoVarietal.ToString();
+				txtTablaVarietal.Text = rancho.TablaVarietal.ToString();
+				cbSupervisor.Text = rancho.IdSupervisor;
+            }
+        }
+
+		private void ControlesEditables()
+        {
+			
+        }
 		private void Limpiar()
 		{
 			txtCodigoRancho.Text = string.Empty;
@@ -96,5 +112,13 @@ namespace NomiCamp
 			txtTipoVarietal.Text = string.Empty;
 			cbSupervisor.SelectedIndex = -1;
 		}
-	}
+
+        private void txtCodigoRancho_KeyPress(object sender, KeyPressEventArgs e)
+        {
+			if (e.KeyChar == (char)Keys.Enter)
+			{
+				Consultar();
+			}
+		}
+    }
 }

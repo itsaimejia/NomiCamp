@@ -31,7 +31,31 @@ namespace NomiCamp.Models
 			}
 		}
 
+		public static Rancho Select(string codigo)
+        {
+			string query = $"select * from ranchos where codigo_rancho= '{codigo}'";
+			try
+			{
+				var cmd = new MySqlCommand(query, Conexion.get());
+				var reader = cmd.ExecuteReader();
 
+				var res = new Rancho();
+				while (reader.Read())
+				{
+					res.Codigo = Convert.ToString(reader["codigo_rancho"]);
+					res.Hectareas = float.Parse(Convert.ToString(reader["hectareas"]));
+					res.TipoVarietal = int.Parse(Convert.ToString(reader["tipo_varietal"]));
+					res.TablaVarietal = int.Parse(Convert.ToString(reader["tabla_varietal"]));
+					res.IdSupervisor = Convert.ToString(reader["id_supervisor"]);
+				}
+				reader.Close();
+				return res;
+			}
+			catch (Exception e)
+			{
+				return null;
+			}
+		}
 
 		public static List<Rancho> GetRanchos()
 		{
