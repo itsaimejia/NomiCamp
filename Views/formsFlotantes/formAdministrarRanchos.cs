@@ -6,7 +6,6 @@ namespace NomiCamp
 {
 	public partial class formAdministrarRanchos : Form
 	{
-		private bool editar = false;
 		public formAdministrarRanchos()
 		{
 			InitializeComponent();
@@ -14,9 +13,38 @@ namespace NomiCamp
 
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
-            if (editar)
+            if (string.IsNullOrEmpty(txtCodigoRancho.Text)) 
+			{
+				MessageBox.Show("Ingresa el codigo de rancho");
+				txtCodigoRancho.Focus();
+			}
+			else
+			if (string.IsNullOrEmpty(txtHectareas.Text)) 
+			{
+				MessageBox.Show("Ingresa las hectareas");
+				txtHectareas.Focus();
+			}
+			else
+            if (string.IsNullOrEmpty(txtTablaVarietal.Text))
             {
-				var existente = new Rancho
+				MessageBox.Show("Ingresa tabla varietal");
+				txtTablaVarietal.Focus();
+            }
+			else
+            if (string.IsNullOrEmpty(txtTipoVarietal.Text))
+            {
+				MessageBox.Show("Ingresa tipo varietal");
+				txtTipoVarietal.Focus();
+            }
+			else
+			if (cbSupervisor.SelectedIndex.Equals(-1))
+            {
+				MessageBox.Show("Selecciona un supervisor");
+				cbSupervisor.Focus();
+			}
+			else
+			{
+				var nuevo = new Rancho
 				{
 					Codigo = txtCodigoRancho.Text,
 					Hectareas = float.Parse(txtHectareas.Text),
@@ -25,7 +53,7 @@ namespace NomiCamp
 					IdSupervisor = cbSupervisor.Text
 				};
 
-				if (existente.Update())
+				if (nuevo.Insert())
 				{
 					MessageBox.Show("Insertado");
 					Limpiar();
@@ -33,59 +61,6 @@ namespace NomiCamp
 				else
 				{
 					MessageBox.Show("Ocurrio un error");
-				}
-			}
-            else
-            {
-				if (string.IsNullOrEmpty(txtCodigoRancho.Text))
-				{
-					MessageBox.Show("Ingresa el codigo de rancho");
-					txtCodigoRancho.Focus();
-				}
-				else
-			if (string.IsNullOrEmpty(txtHectareas.Text))
-				{
-					MessageBox.Show("Ingresa las hectareas");
-					txtHectareas.Focus();
-				}
-				else
-			if (string.IsNullOrEmpty(txtTablaVarietal.Text))
-				{
-					MessageBox.Show("Ingresa tabla varietal");
-					txtTablaVarietal.Focus();
-				}
-				else
-			if (string.IsNullOrEmpty(txtTipoVarietal.Text))
-				{
-					MessageBox.Show("Ingresa tipo varietal");
-					txtTipoVarietal.Focus();
-				}
-				else
-			if (cbSupervisor.SelectedIndex.Equals(-1))
-				{
-					MessageBox.Show("Selecciona un supervisor");
-					cbSupervisor.Focus();
-				}
-				else
-				{
-					var nuevo = new Rancho
-					{
-						Codigo = txtCodigoRancho.Text,
-						Hectareas = float.Parse(txtHectareas.Text),
-						TipoVarietal = int.Parse(txtTipoVarietal.Text),
-						TablaVarietal = int.Parse(txtTablaVarietal.Text),
-						IdSupervisor = cbSupervisor.Text
-					};
-
-					if (nuevo.Insert())
-					{
-						MessageBox.Show("Insertado");
-						Limpiar();
-					}
-					else
-					{
-						MessageBox.Show("Ocurrio un error");
-					}
 				}
 			}
 		}
@@ -116,11 +91,8 @@ namespace NomiCamp
 		private void Consultar()
         {
 			var rancho = Rancho.Select(txtCodigoRancho.Text);
-			if (rancho.Codigo != null)
+			if (rancho != null)
 			{
-				btnGuardar.Text = "Actualizar";
-				editar = true;
-				ControlesEditables();
 				txtHectareas.Text = rancho.Hectareas.ToString();
 				txtTipoVarietal.Text = rancho.TipoVarietal.ToString();
 				txtTablaVarietal.Text = rancho.TablaVarietal.ToString();
@@ -128,17 +100,10 @@ namespace NomiCamp
 
 				ControlesEditables();
             }
-            else
-            {
-				ControlesEditables();
-
-            }
         }
 
 		private void ControlesEditables()
         {
-			btnGuardar.Enabled = true;
-			btnRemover.Enabled = true;
 			txtHectareas.Enabled = true;
 			txtCodigoRancho.Enabled = true;
 			txtTablaVarietal.Enabled = true;
@@ -152,7 +117,6 @@ namespace NomiCamp
 			txtTablaVarietal.Text = string.Empty;
 			txtTipoVarietal.Text = string.Empty;
 			cbSupervisor.SelectedIndex = -1;
-			btnGuardar.Text = "Guardar";
 		}
 
         private void txtCodigoRancho_KeyPress(object sender, KeyPressEventArgs e)

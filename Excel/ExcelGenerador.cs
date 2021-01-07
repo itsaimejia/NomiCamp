@@ -46,30 +46,5 @@ namespace NomiCamp.Excel
 			Process.Start(path);
 
 		}
-
-		public void ReporteRanchos(List<Rancho> list)
-        {
-			string path = $"{@"C:\Archivos Excel\"}{Nombre}.xlsx";
-
-			SLDocument doc = new SLDocument();
-
-			DataTable dt = new DataTable();
-
-			dt.Columns.Add("Codigo rancho", typeof(string));
-			dt.Columns.Add("Hectareas", typeof(float));
-			dt.Columns.Add("Tipo varietal", typeof(int));
-			dt.Columns.Add("Tabla varietal", typeof(int));
-			dt.Columns.Add("Id Supervisor", typeof(string));
-
-			foreach (var l in list)
-			{
-				dt.Rows.Add(l.Codigo,l.Hectareas,l.TipoVarietal,l.TablaVarietal,l.IdSupervisor);
-			}
-
-			doc.ImportDataTable(1, 1, dt, true);
-
-			doc.SaveAs(path);
-			Process.Start(path);
-		}
 	}
 }
