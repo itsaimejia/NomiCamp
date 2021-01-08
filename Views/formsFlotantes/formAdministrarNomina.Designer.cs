@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnRegresar = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
@@ -43,7 +43,12 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.lblNoEmpleado = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.dgvInformacion = new System.Windows.Forms.DataGridView();
+			this.Actividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.CostoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.lblTablaV = new System.Windows.Forms.Label();
 			this.lblTipoV = new System.Windows.Forms.Label();
 			this.lblFecha = new System.Windows.Forms.Label();
@@ -54,17 +59,13 @@
 			this.label9 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
-			this.Actividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Administrar = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.CostoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.label7 = new System.Windows.Forms.Label();
+			this.lblTotal = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvInformacion)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -86,6 +87,7 @@
 			this.btnRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.btnRegresar.TabIndex = 1;
 			this.btnRegresar.TabStop = false;
+			this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
 			// 
 			// panel1
 			// 
@@ -189,7 +191,7 @@
 			// 
 			// groupBox2
 			// 
-			this.groupBox2.Controls.Add(this.dataGridView1);
+			this.groupBox2.Controls.Add(this.dgvInformacion);
 			this.groupBox2.Controls.Add(this.lblTablaV);
 			this.groupBox2.Controls.Add(this.lblTipoV);
 			this.groupBox2.Controls.Add(this.lblFecha);
@@ -208,39 +210,78 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Información laborada";
 			// 
-			// dataGridView1
+			// dgvInformacion
 			// 
-			this.dataGridView1.AllowUserToAddRows = false;
-			this.dataGridView1.AllowUserToDeleteRows = false;
-			this.dataGridView1.AllowUserToResizeColumns = false;
-			this.dataGridView1.AllowUserToResizeRows = false;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dgvInformacion.AllowUserToAddRows = false;
+			this.dgvInformacion.AllowUserToDeleteRows = false;
+			this.dgvInformacion.AllowUserToResizeColumns = false;
+			this.dgvInformacion.AllowUserToResizeRows = false;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvInformacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			this.dgvInformacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Actividad,
             this.Tipo,
             this.Cantidad,
             this.Costo,
-            this.Administrar,
             this.CostoTotal});
-			this.dataGridView1.Location = new System.Drawing.Point(10, 62);
-			this.dataGridView1.Name = "dataGridView1";
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-			this.dataGridView1.Size = new System.Drawing.Size(760, 83);
-			this.dataGridView1.TabIndex = 17;
+			this.dgvInformacion.Location = new System.Drawing.Point(10, 62);
+			this.dgvInformacion.Name = "dgvInformacion";
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvInformacion.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			this.dgvInformacion.Size = new System.Drawing.Size(760, 83);
+			this.dgvInformacion.TabIndex = 17;
+			this.dgvInformacion.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInformacion_CellEndEdit);
+			// 
+			// Actividad
+			// 
+			this.Actividad.Frozen = true;
+			this.Actividad.HeaderText = "Actividad";
+			this.Actividad.Name = "Actividad";
+			this.Actividad.ReadOnly = true;
+			this.Actividad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// Tipo
+			// 
+			this.Tipo.Frozen = true;
+			this.Tipo.HeaderText = "Tipo";
+			this.Tipo.Name = "Tipo";
+			this.Tipo.ReadOnly = true;
+			this.Tipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// Cantidad
+			// 
+			this.Cantidad.Frozen = true;
+			this.Cantidad.HeaderText = "Cantidad";
+			this.Cantidad.Name = "Cantidad";
+			this.Cantidad.ReadOnly = true;
+			this.Cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// Costo
+			// 
+			this.Costo.Frozen = true;
+			this.Costo.HeaderText = "Costo";
+			this.Costo.Name = "Costo";
+			this.Costo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// CostoTotal
+			// 
+			this.CostoTotal.Frozen = true;
+			this.CostoTotal.HeaderText = "Costo total";
+			this.CostoTotal.Name = "CostoTotal";
+			this.CostoTotal.ReadOnly = true;
+			this.CostoTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
 			// 
 			// lblTablaV
 			// 
@@ -335,51 +376,25 @@
 			this.label13.Size = new System.Drawing.Size(0, 23);
 			this.label13.TabIndex = 0;
 			// 
-			// Actividad
+			// label7
 			// 
-			this.Actividad.Frozen = true;
-			this.Actividad.HeaderText = "Actividad";
-			this.Actividad.Name = "Actividad";
-			this.Actividad.ReadOnly = true;
-			this.Actividad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.Location = new System.Drawing.Point(587, 407);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(56, 23);
+			this.label7.TabIndex = 10;
+			this.label7.Text = "Total:";
 			// 
-			// Tipo
+			// lblTotal
 			// 
-			this.Tipo.Frozen = true;
-			this.Tipo.HeaderText = "Tipo";
-			this.Tipo.Name = "Tipo";
-			this.Tipo.ReadOnly = true;
-			this.Tipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-			// 
-			// Cantidad
-			// 
-			this.Cantidad.Frozen = true;
-			this.Cantidad.HeaderText = "Cantidad";
-			this.Cantidad.Name = "Cantidad";
-			this.Cantidad.ReadOnly = true;
-			this.Cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-			// 
-			// Costo
-			// 
-			this.Costo.Frozen = true;
-			this.Costo.HeaderText = "Costo";
-			this.Costo.Name = "Costo";
-			this.Costo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-			// 
-			// Administrar
-			// 
-			this.Administrar.Frozen = true;
-			this.Administrar.HeaderText = "Administrar";
-			this.Administrar.Name = "Administrar";
-			this.Administrar.UseColumnTextForButtonValue = true;
-			// 
-			// CostoTotal
-			// 
-			this.CostoTotal.Frozen = true;
-			this.CostoTotal.HeaderText = "Costo total";
-			this.CostoTotal.Name = "CostoTotal";
-			this.CostoTotal.ReadOnly = true;
-			this.CostoTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			this.lblTotal.AutoSize = true;
+			this.lblTotal.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTotal.Location = new System.Drawing.Point(649, 407);
+			this.lblTotal.Name = "lblTotal";
+			this.lblTotal.Size = new System.Drawing.Size(35, 23);
+			this.lblTotal.TabIndex = 11;
+			this.lblTotal.Text = "0.0";
 			// 
 			// formAdministrarNomina
 			// 
@@ -387,12 +402,16 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.ControlBox = false;
+			this.Controls.Add(this.lblTotal);
+			this.Controls.Add(this.label7);
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.panel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "formAdministrarNomina";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "formAdministrarNomina";
+			this.Load += new System.EventHandler(this.formAdministrarNomina_Load);
 			((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
@@ -400,8 +419,9 @@
 			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvInformacion)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -420,7 +440,7 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label lblNombre;
 		private System.Windows.Forms.GroupBox groupBox2;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView dgvInformacion;
 		private System.Windows.Forms.Label lblTablaV;
 		private System.Windows.Forms.Label lblTipoV;
 		private System.Windows.Forms.Label lblFecha;
@@ -435,7 +455,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
-		private System.Windows.Forms.DataGridViewButtonColumn Administrar;
 		private System.Windows.Forms.DataGridViewTextBoxColumn CostoTotal;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label lblTotal;
 	}
 }

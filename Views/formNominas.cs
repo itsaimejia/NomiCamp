@@ -1,4 +1,5 @@
 ﻿using NomiCamp.Models;
+using NomiCamp.Views.formsFlotantes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,9 +30,11 @@ namespace NomiCamp.Views
 			dgvNominas.Size = new Size(this.Width - 40, this.Height - 100);
 			dgvNominas.Location = new Point(20, 50);
 			btnReporteExcel.Location = new Point(this.Width - 140, this.Size.Height - 40);
+			btnActualizar.Location = new Point(20, this.Size.Height - 40);
 			lblFecha.Text = DateTime.Today.ToString("dd/MM/yyyy");
+			
 
-			listNominas = Nomina.GetNominas(lblFecha.Text);
+			
 			ActualizarTabla();
 		}
 
@@ -40,16 +43,12 @@ namespace NomiCamp.Views
 			dgvNominas.Rows.Clear();
 			dgvNominas.Refresh();
 
-			ArrayList row;
-			foreach (var n in listNominas)
-			{
-				row = new ArrayList();
-				row.Add(n.IdNomina);
-				row.Add(n.Empleado.NoEmpleado);
-				row.Add(n.Empleado.Nombre);
-				row.Add(n.Empleado.Puesto);
-				dgvNominas.Rows.Add(row.ToArray());
-			}
+			ArrayList row = new ArrayList();
+			row.Add("12332121110");
+			row.Add("100");
+			row.Add("wqqw");
+			row.Add("Trailero");
+			dgvNominas.Rows.Add(row.ToArray());
 		}
 
 		private void btnReporteExcel_Click(object sender, EventArgs e)
@@ -57,9 +56,22 @@ namespace NomiCamp.Views
 
 		}
 
-		private void dvNominas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		private void dgvNominas_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
+			if (dgvNominas.Columns[e.ColumnIndex].Name.Equals("Administrar"))
+			{
+				DataGridViewRow datos = dgvNominas.Rows[e.RowIndex];
+				string idNomina = datos.Cells["IdNomina"].Value.ToString();
+				formAdministrarNomina fr = new formAdministrarNomina();
+				fr.Show();
+				
+			}
+		}
 
+		private void btnActualizar_Click(object sender, EventArgs e)
+		{
+			listNominas = Nomina.GetNominas();
+			ActualizarTabla();
 		}
 	}
 }

@@ -73,7 +73,7 @@
     </Compile>
     <Compile Include="Excel\ExcelGenerador.cs" />
     <Compile Include="Excel\Archivos.cs" />
-    <Compile Include="Models\Actividad.cs" />
+    <Compile Include="Models\Actividades.cs" />
     <Compile Include="Models\Conexion.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\Nomina.cs" />

@@ -11,8 +11,8 @@ namespace NomiCamp.Models
 	{
 		public string IdNomina { get; set; }
 		public Empleado Empleado { get; set; }
-		public Rancho Rancho { get; set; }
-		public Actividad Actividad { get; set; }
+		public string CodigoRancho { get; set; }
+		public string CodigoActividad { get; set; }
 		public float Cantidad { get; set; }
 		public string Fecha { get; set; }
 		public int Asistencia { get; set; }
@@ -20,7 +20,7 @@ namespace NomiCamp.Models
 
 		public bool Insert()
 		{
-			string query = $"insert into nominas values ('{IdNomina}','{Empleado.NoEmpleado}','{Rancho.Codigo}','{Actividad.Codigo}','{Fecha}',{Asistencia})";
+			string query = $"insert into nominas values ('{IdNomina}','{Empleado.NoEmpleado}','{CodigoRancho}','{CodigoActividad}','{Fecha}',{Asistencia})";
 			try
 			{
 				var cmd = new MySqlCommand(query, Conexion.get());
@@ -45,10 +45,10 @@ namespace NomiCamp.Models
 				var res = new Nomina();
 				while (reader.Read())
 				{
-					res.IdNomina = Convert.ToString(reader["no_empleado"]);
-					res.Empleado = Empleado.Select(Convert.ToString(reader["no_empleado"]));
-					res.Rancho = Rancho.Select(Convert.ToString(reader["codigo_rancho"]));
-					res.Actividad = Actividad.Select(Convert.ToString(reader["id_actividad"]));
+					res.IdNomina = Convert.ToString(reader["id_nomina"]);
+					//res.NoEmpleado = Convert.ToString(reader["no_empleado"]);
+					res.CodigoRancho = Convert.ToString(reader["codigo_rancho"]);
+					res.CodigoActividad = Convert.ToString(reader["id_actividad"]);
 					res.Cantidad = float.Parse(Convert.ToString(reader["cantidad_laboradas"]));
 					res.Fecha = Convert.ToString(reader["fecha"]);
 					res.Asistencia = int.Parse(Convert.ToString(reader["asistencia"]));
@@ -63,20 +63,27 @@ namespace NomiCamp.Models
 			}
 			
 		}
-		public static List<Nomina> GetNominas(string fecha)
+		public static List<Nomina> GetNominas()
 		{
 			List<Nomina> lista = new List<Nomina>();
-			string query = $"select * from nominas where fecha={fecha}";
+			string query = $"SELECT empleados.no_empleado, empleados.nombre, empleados.puesto, nominas.id_nomina" +
+				$"FROM nominas " +
+				$"INNER JOIN empleados " +
+				$"ON nominas.no_empleado = empleados.no_empleado";
 			var cmd = new MySqlCommand(query, Conexion.get());
 			var reader = cmd.ExecuteReader();
-			//readrer = ["id_info_empleado":"1234","no_empleado":222,3242saa,saas,2,44/55/66,1]
 			while (reader.Read())
 			{
 				lista.Add(new Nomina
 				{
-					IdNomina = Convert.ToString(reader["id_nomina"]), 
-					Empleado=Empleado.Select(Convert.ToString(reader["no_empleado"])),
-					
+					IdNomina = Convert.ToString(reader["id_nomina"]),
+					Empleado = new Empleado
+					{
+						NoEmpleado=Convert.ToString(reader["no_empleado"]),
+						Nombre=Convert.ToString(reader["nombre"]),
+						Puesto=Convert.ToString(reader["puesto"])
+					}
+
 				});
 			}
 			reader.Close();
