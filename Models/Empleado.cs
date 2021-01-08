@@ -96,7 +96,7 @@ namespace NomiCamp.Models
 		{ 
 
 			List<Empleado> lista = new List<Empleado>();
-			string query = "select * from empleados";
+			string query = "select * from empleados where not puesto = 'supervisor'";
 			var cmd = new MySqlCommand(query, Conexion.get());
 			var reader = cmd.ExecuteReader();
 			while (reader.Read())
