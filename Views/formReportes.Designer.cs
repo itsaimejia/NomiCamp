@@ -30,6 +30,7 @@
 		{
 			this.dgvReportes = new System.Windows.Forms.DataGridView();
 			this.Archivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnActualizar = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -45,7 +46,7 @@
 			this.dgvReportes.Name = "dgvReportes";
 			this.dgvReportes.Size = new System.Drawing.Size(240, 150);
 			this.dgvReportes.TabIndex = 0;
-			this.dgvReportes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReportes_CellContentClick);
+			this.dgvReportes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReportes_CellContentDoubleClick);
 			// 
 			// Archivo
 			// 
@@ -57,12 +58,25 @@
 			this.Archivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
 			this.Archivo.ToolTipText = "Doble click para abrir el archivo";
 			// 
+			// btnActualizar
+			// 
+			this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+			this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnActualizar.Location = new System.Drawing.Point(12, 412);
+			this.btnActualizar.Name = "btnActualizar";
+			this.btnActualizar.Size = new System.Drawing.Size(74, 26);
+			this.btnActualizar.TabIndex = 5;
+			this.btnActualizar.Text = "Actualizar";
+			this.btnActualizar.UseVisualStyleBackColor = false;
+			this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+			// 
 			// formReportes
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.ControlBox = false;
+			this.Controls.Add(this.btnActualizar);
 			this.Controls.Add(this.dgvReportes);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "formReportes";
@@ -77,5 +91,6 @@
 
 		private System.Windows.Forms.DataGridView dgvReportes;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Archivo;
+		private System.Windows.Forms.Button btnActualizar;
 	}
 }

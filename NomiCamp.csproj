@@ -73,8 +73,10 @@
     </Compile>
     <Compile Include="Excel\ExcelGenerador.cs" />
     <Compile Include="Excel\Archivos.cs" />
+    <Compile Include="Models\Actividad.cs" />
     <Compile Include="Models\Conexion.cs" />
     <Compile Include="Models\Empleado.cs" />
+    <Compile Include="Models\Nomina.cs" />
     <Compile Include="Models\Rancho.cs" />
     <Compile Include="Models\Supervisor.cs" />
     <Compile Include="Program.cs" />

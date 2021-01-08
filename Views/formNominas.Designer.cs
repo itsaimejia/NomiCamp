@@ -28,8 +28,9 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			this.dvNominas = new System.Windows.Forms.DataGridView();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			this.dgvNominas = new System.Windows.Forms.DataGridView();
+			this.IdNomina = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.NoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,26 +39,36 @@
 			this.btnReporteExcel = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblFecha = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.dvNominas)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvNominas)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// dvNominas
+			// dgvNominas
 			// 
-			this.dvNominas.AllowUserToAddRows = false;
-			this.dvNominas.AllowUserToDeleteRows = false;
-			this.dvNominas.AllowUserToResizeColumns = false;
-			this.dvNominas.AllowUserToResizeRows = false;
-			this.dvNominas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dvNominas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dgvNominas.AllowUserToAddRows = false;
+			this.dgvNominas.AllowUserToDeleteRows = false;
+			this.dgvNominas.AllowUserToResizeColumns = false;
+			this.dgvNominas.AllowUserToResizeRows = false;
+			this.dgvNominas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvNominas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdNomina,
             this.NoEmpleado,
             this.Nombre,
             this.Puesto,
             this.Administrar,
             this.NominaDia});
-			this.dvNominas.Location = new System.Drawing.Point(59, 103);
-			this.dvNominas.Name = "dvNominas";
-			this.dvNominas.Size = new System.Drawing.Size(631, 224);
-			this.dvNominas.TabIndex = 0;
+			this.dgvNominas.Location = new System.Drawing.Point(59, 103);
+			this.dgvNominas.Name = "dgvNominas";
+			this.dgvNominas.Size = new System.Drawing.Size(631, 224);
+			this.dgvNominas.TabIndex = 0;
+			this.dgvNominas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvNominas_CellContentClick);
+			// 
+			// IdNomina
+			// 
+			this.IdNomina.HeaderText = "Id Nomina";
+			this.IdNomina.Name = "IdNomina";
+			this.IdNomina.ReadOnly = true;
+			this.IdNomina.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.IdNomina.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
 			// 
 			// NoEmpleado
 			// 
@@ -85,9 +96,9 @@
 			// 
 			// Administrar
 			// 
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle1.NullValue = "Administrar";
-			this.Administrar.DefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle3.NullValue = "Administrar";
+			this.Administrar.DefaultCellStyle = dataGridViewCellStyle3;
 			this.Administrar.HeaderText = "Administrar";
 			this.Administrar.Name = "Administrar";
 			this.Administrar.ReadOnly = true;
@@ -140,12 +151,12 @@
 			this.Controls.Add(this.lblFecha);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnReporteExcel);
-			this.Controls.Add(this.dvNominas);
+			this.Controls.Add(this.dgvNominas);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "formNominas";
 			this.Text = "formNominas";
 			this.Load += new System.EventHandler(this.formNominas_Load);
-			((System.ComponentModel.ISupportInitialize)(this.dvNominas)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvNominas)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -153,10 +164,11 @@
 
 		#endregion
 
-		private System.Windows.Forms.DataGridView dvNominas;
+		private System.Windows.Forms.DataGridView dgvNominas;
 		private System.Windows.Forms.Button btnReporteExcel;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lblFecha;
+		private System.Windows.Forms.DataGridViewTextBoxColumn IdNomina;
 		private System.Windows.Forms.DataGridViewTextBoxColumn NoEmpleado;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Puesto;
